@@ -142,7 +142,7 @@ section { padding: 72px 48px; }
 
 /* OFFRES */
 #offers { background: #F5F5F5; }
-.offers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: start; }
+.offers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
 .offer-card { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 28px 20px; display: flex; flex-direction: column; }
 .offer-card.featured { border: 2px solid #1A1A1A; }
 .offer-badge {
