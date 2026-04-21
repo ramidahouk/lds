@@ -1,9 +1,9 @@
 /* ============================================================
    LDS WIREFRAMES — STYLE.CSS
    Palette :
-     Rust      #BC380F  — primary (CTAs, active nav, confirmed, featured)
+     Orange    #F26430  — primary (CTAs, active nav, confirmed, featured)
      Sky Blue  #73A3EF  — secondary (links, table actions, validated)
-     Orange    #F26430  — energy/movement (alerts, progress, en cours)
+     Orange    #F26430  — brand accent used across site and dashboard
      Sky Tint  #F0F0F0  — alternating section backgrounds (12% Sky Blue on white)
      Deep Blue #3574F2  — focus rings only
      ---
@@ -62,14 +62,14 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
    Parallelogram: forward-lean shape = movement
 =========================== */
 .btn-primary {
-  background: #BC380F; color: #FFFFFF; border: none;
+  background: #F26430; color: #FFFFFF; border: none;
   padding: 11px 28px; font-size: 14px; cursor: pointer;
   text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
   font-family: inherit; font-weight: 700;
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
 }
 .btn-secondary {
-  background: transparent; color: #BC380F; border: none;
+  background: transparent; color: #F26430; border: none;
   padding: 11px 20px; font-size: 14px; cursor: pointer;
   text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
   font-family: inherit; font-weight: 700;
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
   display: inline-block; padding: 3px 11px;
   font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
 }
-.badge-confirmed   { background: #BC380F; color: #FFFFFF; }
+.badge-confirmed   { background: #F26430; color: #FFFFFF; }
 .badge-validated   { background: #73A3EF; color: #FFFFFF; }
 .badge-in-progress { background: #FFF3EE; color: #F26430; border: 1px solid #F26430; }
 .badge-to-plan     { background: #EDF4FC; color: #73A3EF; border: 1px solid #73A3EF; }
@@ -117,7 +117,7 @@ body > nav {
   display: flex; gap: 28px; list-style: none; flex: 1; justify-content: center;
 }
 .nav-links a { text-decoration: none; color: #1A1A1A; font-size: 14px; font-weight: 600; }
-.nav-links a:hover { color: #BC380F; }
+.nav-links a:hover { color: #F26430; }
 .nav-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 
 /* SECTIONS */
@@ -130,7 +130,7 @@ section { padding: 72px 48px; }
   content: '';
   display: block;
   width: 48px; height: 3px;
-  background: #BC380F;
+  background: #F26430;
   margin: 14px auto 0;
 }
 
@@ -172,7 +172,7 @@ section { padding: 72px 48px; }
 }
 .step { flex: 1; text-align: center; padding: 36px 28px; border: 1px solid #CCCCCC; }
 .step-number {
-  width: 44px; height: 44px; background: #BC380F; color: #FFFFFF;
+  width: 44px; height: 44px; background: #F26430; color: #FFFFFF;
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
   font-size: 20px; font-weight: bold; margin: 0 auto 18px;
 }
@@ -252,7 +252,7 @@ section { padding: 72px 48px; }
 .author-info p  { font-size: 13px; color: #666666; }
 .testimonial-quote {
   font-size: 15px; font-style: italic; line-height: 1.7;
-  border-left: 3px solid #BC380F; padding-left: 16px;
+  border-left: 3px solid #F26430; padding-left: 16px;
 }
 
 /* FAQ */
@@ -266,7 +266,7 @@ section { padding: 72px 48px; }
   font-family: inherit; font-size: 16px; font-weight: bold; text-align: left;
   color: #1A1A1A; gap: 16px;
 }
-.faq-question:hover { color: #BC380F; }
+.faq-question:hover { color: #F26430; }
 .faq-answer { display: none; padding: 0 0 18px; }
 .faq-answer.open { display: block; }
 .faq-answer p { font-size: 14px; color: #666666; line-height: 1.7; }
@@ -327,9 +327,9 @@ footer {
   border: none; background: transparent; width: 100%; text-align: left;
   font-family: inherit; transition: background 0.1s;
 }
-.nav-item:hover  { background: #F0F0F0; color: #BC380F; }
+.nav-item:hover  { background: #F0F0F0; color: #F26430; }
 .nav-item.active {
-  background: #BC380F; color: #FFFFFF;
+  background: #F26430; color: #FFFFFF;
   /* slight forward-lean indicator on active item */
   border-left: none;
 }
@@ -365,7 +365,7 @@ footer {
 .alert-content { display: flex; align-items: center; gap: 10px; }
 .alert-text { font-size: 14px; color: #1A1A1A; }
 .btn-sm {
-  background: #BC380F; color: #FFFFFF; border: none;
+  background: #F26430; color: #FFFFFF; border: none;
   padding: 7px 18px; font-size: 12px; cursor: pointer; font-weight: bold;
   white-space: nowrap; font-family: inherit;
   clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
@@ -392,12 +392,12 @@ footer {
 .status-label { font-size: 13px; color: #666666; display: flex; align-items: center; gap: 5px; }
 .trip-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn-trip-primary {
-  background: #BC380F; color: #FFFFFF; border: none;
+  background: #F26430; color: #FFFFFF; border: none;
   padding: 10px 22px; font-size: 13px; cursor: pointer; font-family: inherit; font-weight: bold;
   clip-path: polygon(7px 0%, 100% 0%, calc(100% - 7px) 100%, 0% 100%);
 }
 .btn-trip-secondary {
-  background: transparent; color: #BC380F; border: none;
+  background: transparent; color: #F26430; border: none;
   padding: 10px 18px; font-size: 13px; cursor: pointer; font-family: inherit; font-weight: bold;
 }
 .btn-trip-primary:hover  { opacity: 0.85; }
@@ -420,7 +420,7 @@ footer {
   display: inline-flex; align-items: center; gap: 5px;
   padding: 2px 9px; font-size: 11px; border: 1px solid transparent;
 }
-.t-badge.t-confirmed { background: #BC380F; color: #FFFFFF; border-color: #BC380F; }
+.t-badge.t-confirmed { background: #F26430; color: #FFFFFF; border-color: #F26430; }
 .t-badge.t-progress  { background: #FFF3EE; color: #F26430; border-color: #F26430; }
 .t-badge.t-plan      { background: #EDF4FC; color: #73A3EF; border-color: #73A3EF; }
 .t-action {
