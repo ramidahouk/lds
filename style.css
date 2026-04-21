@@ -1,11 +1,10 @@
 /* ============================================================
    LDS WIREFRAMES — STYLE.CSS
    Palette :
-     Orange    #F26430  — primary (CTAs, active nav, confirmed, featured)
-     Sky Blue  #73A3EF  — secondary (links, table actions, validated)
-     Orange    #F26430  — brand accent used across site and dashboard
+     Deep Blue #3574F2  — brand, trust, navigation, structured states
+     Orange    #F26430  — CTAs, motion, emphasis, urgency
+     Sky Blue  #73A3EF  — secondary support / lighter informational states
      Sky Tint  #F0F0F0  — alternating section backgrounds (12% Sky Blue on white)
-     Deep Blue #3574F2  — focus rings only
      ---
      Black #1A1A1A | Borders #CCCCCC | Muted #666666 | White #FFFFFF
 
@@ -62,7 +61,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
    Parallelogram: forward-lean shape = movement
 =========================== */
 .btn-primary {
-  background: #F26430; color: #FFFFFF; border: none;
+  background: #3574F2; color: #FFFFFF; border: none;
   padding: 11px 28px; font-size: 14px; cursor: pointer;
   text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
   font-family: inherit; font-weight: 700;
@@ -91,7 +90,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
   display: inline-block; padding: 3px 11px;
   font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
 }
-.badge-confirmed   { background: #F26430; color: #FFFFFF; }
+.badge-confirmed   { background: #3574F2; color: #FFFFFF; }
 .badge-validated   { background: #73A3EF; color: #FFFFFF; }
 .badge-in-progress { background: #FFF3EE; color: #F26430; border: 1px solid #F26430; }
 .badge-to-plan     { background: #EDF4FC; color: #73A3EF; border: 1px solid #73A3EF; }
@@ -117,7 +116,7 @@ body > nav {
   display: flex; gap: 28px; list-style: none; flex: 1; justify-content: center;
 }
 .nav-links a { text-decoration: none; color: #1A1A1A; font-size: 14px; font-weight: 600; }
-.nav-links a:hover { color: #F26430; }
+.nav-links a:hover { color: #3574F2; }
 .nav-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 
 /* SECTIONS */
@@ -130,7 +129,7 @@ section { padding: 72px 48px; }
   content: '';
   display: block;
   width: 48px; height: 3px;
-  background: #F26430;
+  background: #3574F2;
   margin: 14px auto 0;
 }
 
@@ -172,7 +171,7 @@ section { padding: 72px 48px; }
 }
 .step { flex: 1; text-align: center; padding: 36px 28px; border: 1px solid #CCCCCC; }
 .step-number {
-  width: 44px; height: 44px; background: #F26430; color: #FFFFFF;
+  width: 44px; height: 44px; background: #3574F2; color: #FFFFFF;
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
   font-size: 20px; font-weight: bold; margin: 0 auto 18px;
 }
@@ -252,7 +251,7 @@ section { padding: 72px 48px; }
 .author-info p  { font-size: 13px; color: #666666; }
 .testimonial-quote {
   font-size: 15px; font-style: italic; line-height: 1.7;
-  border-left: 3px solid #F26430; padding-left: 16px;
+  border-left: 3px solid #3574F2; padding-left: 16px;
 }
 
 /* FAQ */
@@ -266,7 +265,7 @@ section { padding: 72px 48px; }
   font-family: inherit; font-size: 16px; font-weight: bold; text-align: left;
   color: #1A1A1A; gap: 16px;
 }
-.faq-question:hover { color: #F26430; }
+.faq-question:hover { color: #3574F2; }
 .faq-answer { display: none; padding: 0 0 18px; }
 .faq-answer.open { display: block; }
 .faq-answer p { font-size: 14px; color: #666666; line-height: 1.7; }
@@ -279,23 +278,23 @@ section { padding: 72px 48px; }
 
 /* FOOTER */
 footer {
-  background: #1A1A1A; color: #FFFFFF;
+  background: #3574F2; color: #FFFFFF;
   padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .footer-logo {
-  width: 100px; height: 40px; background: #333333; border: 1px solid #444444;
+  width: 100px; height: 40px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.24);
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; color: #CCCCCC; flex-shrink: 0;
 }
 .footer-links { display: flex; gap: 24px; list-style: none; }
-.footer-links a { color: #CCCCCC; text-decoration: none; font-size: 13px; }
+.footer-links a { color: rgba(255,255,255,0.84); text-decoration: none; font-size: 13px; }
 .footer-links a:hover { color: #FFFFFF; }
 .footer-right { text-align: right; flex-shrink: 0; }
-.footer-contact { font-size: 13px; color: #CCCCCC; margin-bottom: 10px; }
+.footer-contact { font-size: 13px; color: rgba(255,255,255,0.84); margin-bottom: 10px; }
 .footer-social { display: flex; gap: 10px; justify-content: flex-end; }
 .social-icon {
-  width: 32px; height: 32px; background: #333333; border: 1px solid #444444;
-  display: flex; align-items: center; justify-content: center; color: #CCCCCC;
+  width: 32px; height: 32px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.24);
+  display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.84);
 }
 .social-icon svg { width: 14px; height: 14px; stroke-width: 1.75; }
 
@@ -327,9 +326,9 @@ footer {
   border: none; background: transparent; width: 100%; text-align: left;
   font-family: inherit; transition: background 0.1s;
 }
-.nav-item:hover  { background: #F0F0F0; color: #F26430; }
+.nav-item:hover  { background: #F0F0F0; color: #3574F2; }
 .nav-item.active {
-  background: #F26430; color: #FFFFFF;
+  background: #3574F2; color: #FFFFFF;
   /* slight forward-lean indicator on active item */
   border-left: none;
 }
@@ -344,7 +343,7 @@ footer {
 .sidebar-back-link:hover { background: #F0F0F0; }
 .sidebar-back-link svg { width: 12px; height: 12px; stroke-width: 2; }
 .club-name  { font-size: 13px; font-weight: bold; margin-bottom: 2px; }
-.club-offer { font-size: 12px; color: #F26430; font-weight: bold; margin-bottom: 12px; }
+.club-offer { font-size: 12px; color: #3574F2; font-weight: bold; margin-bottom: 12px; }
 .btn-logout {
   width: 100%; padding: 8px; background: transparent; border: 1px solid #CCCCCC;
   font-size: 12px; cursor: pointer; color: #666666; font-family: inherit;
@@ -359,7 +358,7 @@ footer {
 .page-title   { font-size: 24px; font-weight: bold; margin-bottom: 4px; }
 .page-subtitle { font-size: 14px; color: #666666; margin-bottom: 16px; }
 .alert-banner {
-  background: #FFFFFF; border: 1px solid #CCCCCC; border-left: 4px solid #F26430;
+  background: #FFFFFF; border: 1px solid #CCCCCC; border-left: 4px solid #3574F2;
   padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
 .alert-content { display: flex; align-items: center; gap: 10px; }
@@ -420,7 +419,7 @@ footer {
   display: inline-flex; align-items: center; gap: 5px;
   padding: 2px 9px; font-size: 11px; border: 1px solid transparent;
 }
-.t-badge.t-confirmed { background: #F26430; color: #FFFFFF; border-color: #F26430; }
+.t-badge.t-confirmed { background: #3574F2; color: #FFFFFF; border-color: #3574F2; }
 .t-badge.t-progress  { background: #FFF3EE; color: #F26430; border-color: #F26430; }
 .t-badge.t-plan      { background: #EDF4FC; color: #73A3EF; border-color: #73A3EF; }
 .t-action {
