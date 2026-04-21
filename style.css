@@ -146,9 +146,15 @@ section { padding: 72px 48px; }
 .hero-ctas  { display: flex; gap: 16px; flex-wrap: wrap; }
 .hero-visual {
   flex: 1; min-width: 320px; height: 380px;
-  background: #F0F0F0; border: 1px solid #CCCCCC;
   display: flex; align-items: center; justify-content: center;
   font-size: 14px; color: #666666; position: relative; z-index: 1;
+}
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* PROBLÈME */
@@ -213,9 +219,15 @@ section { padding: 72px 48px; }
 }
 .handisport-points li .icon-check { color: #3574F2; margin-top: 2px; }
 .handisport-visual {
-  height: 320px; background: #CCCCCC; border: 1px solid #666666;
+  height: 420px;
   display: flex; align-items: center; justify-content: center;
-  color: #666666; font-size: 14px;
+}
+.handisport-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
 }
 
 /* PARTENAIRES */
