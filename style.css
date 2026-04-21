@@ -34,6 +34,13 @@
   font-stretch: 75% 125%;
 }
 
+@font-face {
+  font-family: 'Carter One';
+  src: url('./assets/font/Carter_One/CarterOne-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
 body {
   font-family: 'Asap', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -43,7 +50,16 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 { font-weight: 700; }
+h1, h2 {
+  font-family: 'Carter One', 'Asap', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #3574F2;
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Asap', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
 
 /* ===========================
    LUCIDE ICONS — TAILLES
@@ -107,10 +123,11 @@ body > nav {
   background: #FFFFFF; position: sticky; top: 0; z-index: 200; gap: 24px;
 }
 .nav-logo {
-  width: 128px; height: 44px; background: #F0F0F0; border: 1px solid #CCCCCC;
+  width: 56px; height: 56px;
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; color: #666666; font-weight: 700; flex-shrink: 0;
 }
+.nav-logo img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; }
 .nav-tagline { font-size: 12px; color: #666666; font-style: italic; flex-shrink: 0; }
 .nav-links {
   display: flex; gap: 28px; list-style: none; flex: 1; justify-content: center;
@@ -123,7 +140,7 @@ body > nav {
 section { padding: 72px 48px; }
 .section-title {
   font-size: 30px; font-weight: 700;
-  text-align: center; margin-bottom: 48px; color: #1A1A1A;
+  text-align: center; margin-bottom: 48px; color: #3574F2;
 }
 .section-title::after {
   content: '';
@@ -209,6 +226,7 @@ section { padding: 72px 48px; }
 #handisport { background: transparent; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .handisport-content h2 { font-size: 26px; font-weight: bold; margin-bottom: 14px; line-height: 1.3; }
+.handisport-content h4 { font-size: 20px; font-weight: 700; margin-bottom: 14px; line-height: 1.4; color: #1A1A1A; }
 .handisport-content .lead { color: #666666; margin-bottom: 24px; font-size: 15px; line-height: 1.7; }
 .handisport-points { list-style: none; margin-bottom: 28px; }
 .handisport-points li {
@@ -271,29 +289,36 @@ section { padding: 72px 48px; }
 .faq-answer p { font-size: 14px; color: #666666; line-height: 1.7; }
 
 /* CTA FINAL */
-#cta-final { background: #1A1A1A; color: #FFFFFF; text-align: center; }
-#cta-final .section-title { color: #FFFFFF; }
-.cta-subtitle { font-size: 16px; color: #999999; margin-bottom: 36px; line-height: 1.7; }
+#cta-final { background: transparent; color: #1A1A1A; text-align: center; }
+#cta-final .section-title { color: #1A1A1A; }
+.cta-subtitle { font-size: 16px; color: #666666; margin-bottom: 36px; line-height: 1.7; }
 .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+#cta-final .btn-outline-light {
+  color: #F26430;
+  border-color: #F26430;
+}
+#cta-final .btn-outline-light:hover { background: rgba(242,100,48,0.08); }
 
 /* FOOTER */
 footer {
   background: #3574F2; color: #FFFFFF;
-  padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .footer-logo {
-  width: 100px; height: 40px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.24);
+  width: 164px; height: 64px;
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; color: #CCCCCC; flex-shrink: 0;
 }
+.footer-logo img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; }
 .footer-links { display: flex; gap: 24px; list-style: none; }
 .footer-links a { color: rgba(255,255,255,0.84); text-decoration: none; font-size: 13px; }
 .footer-links a:hover { color: #FFFFFF; }
 .footer-right { text-align: right; flex-shrink: 0; }
-.footer-contact { font-size: 13px; color: rgba(255,255,255,0.84); margin-bottom: 10px; }
-.footer-social { display: flex; gap: 10px; justify-content: flex-end; }
+.footer-contact { font-size: 13px; color: rgba(255,255,255,0.84); margin-bottom: 0; }
+.footer-contact-row { display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
+.footer-social { display: flex; gap: 8px; justify-content: flex-end; }
 .social-icon {
-  width: 32px; height: 32px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.24);
+  width: 28px; height: 28px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.24);
   display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.84);
 }
 .social-icon svg { width: 14px; height: 14px; stroke-width: 1.75; }
@@ -315,10 +340,11 @@ footer {
 }
 .sidebar-logo { padding: 20px 16px; border-bottom: 1px solid #CCCCCC; flex-shrink: 0; }
 .logo-box {
-  width: 100%; height: 44px; background: #F0F0F0; border: 1px solid #CCCCCC;
+  width: 100%; height: 44px;
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; color: #666666; font-weight: bold;
 }
+.logo-box img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; }
 .sidebar-nav { padding: 8px 0; flex: 1; }
 .nav-item {
   display: flex; align-items: center; gap: 12px; padding: 12px 20px;
@@ -364,7 +390,7 @@ footer {
 .alert-content { display: flex; align-items: center; gap: 10px; }
 .alert-text { font-size: 14px; color: #1A1A1A; }
 .btn-sm {
-  background: #F26430; color: #FFFFFF; border: none;
+  background: #3574F2; color: #FFFFFF; border: none;
   padding: 7px 18px; font-size: 12px; cursor: pointer; font-weight: bold;
   white-space: nowrap; font-family: inherit;
   clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
@@ -391,7 +417,7 @@ footer {
 .status-label { font-size: 13px; color: #666666; display: flex; align-items: center; gap: 5px; }
 .trip-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn-trip-primary {
-  background: #F26430; color: #FFFFFF; border: none;
+  background: #3574F2; color: #FFFFFF; border: none;
   padding: 10px 22px; font-size: 13px; cursor: pointer; font-family: inherit; font-weight: bold;
   clip-path: polygon(7px 0%, 100% 0%, calc(100% - 7px) 100%, 0% 100%);
 }
