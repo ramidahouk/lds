@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — LDS Espace client</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .support-grid { display: grid; grid-template-columns: 1fr 360px; gap: 20px; margin-bottom: 20px; }
+
+    .interlocutor-card { display: flex; align-items: center; gap: 16px; padding: 16px; background: #F5F5F5; border: 1px solid #CCCCCC; margin-bottom: 20px; }
+    .interlocutor-avatar { width: 48px; height: 48px; background: #CCCCCC; border: 1px solid #CCCCCC; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .interlocutor-info .name { font-size: 15px; font-weight: bold; margin-bottom: 2px; }
+    .interlocutor-info .role { font-size: 13px; color: #666666; margin-bottom: 2px; }
+    .interlocutor-info .avail { font-size: 12px; color: #666666; display: flex; align-items: center; gap: 5px; }
+    .avail-dot { width: 8px; height: 8px; background: #1A1A1A; border-radius: 50%; display: inline-block; }
+
+    .message-thread { list-style: none; margin-bottom: 16px; }
+    .msg-item { padding: 12px 0; border-bottom: 1px solid #F5F5F5; display: flex; flex-direction: column; gap: 4px; }
+    .msg-item:last-child { border-bottom: none; }
+    .msg-meta { display: flex; align-items: center; gap: 8px; }
+    .msg-sender { font-size: 12px; font-weight: bold; }
+    .msg-date { font-size: 11px; color: #666666; }
+    .msg-bubble { font-size: 13px; color: #1A1A1A; line-height: 1.5; background: #F5F5F5; padding: 10px 14px; border-left: 3px solid #CCCCCC; }
+    .msg-bubble.from-lds { background: #1A1A1A; color: #FFFFFF; border-left-color: #1A1A1A; }
+
+    .compose-area { margin-top: 4px; }
+    .compose-area textarea { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #CCCCCC; font-family: inherit; font-size: 13px; resize: vertical; min-height: 90px; }
+    .compose-area textarea:focus { outline: none; border-color: #1A1A1A; }
+    .compose-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; flex-wrap: wrap; gap: 8px; }
+    .compose-hint { font-size: 12px; color: #666666; }
+    .btn-send { background: #1A1A1A; color: #FFFFFF; border: none; padding: 10px 20px; font-size: 13px; cursor: pointer; font-family: inherit; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-send:hover { opacity: 0.85; }
+
+    .incident-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; margin-bottom: 12px; }
+    .incident-form .form-group { display: flex; flex-direction: column; gap: 4px; }
+    .incident-form .form-group.full { grid-column: 1 / -1; }
+    .incident-form label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; color: #666666; }
+    .incident-form input, .incident-form select, .incident-form textarea { padding: 8px 10px; border: 1px solid #CCCCCC; font-family: inherit; font-size: 13px; }
+    .incident-form input:focus, .incident-form select:focus, .incident-form textarea:focus { outline: none; border-color: #1A1A1A; }
+    .urgency-notice { background: #1A1A1A; color: #FFFFFF; padding: 10px 14px; font-size: 12px; display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+    .btn-incident { background: #1A1A1A; color: #FFFFFF; border: none; padding: 10px 20px; font-size: 13px; cursor: pointer; font-family: inherit; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-incident:hover { opacity: 0.85; }
+
+    .faq-support .faq-item { border-bottom: 1px solid #CCCCCC; }
+    .faq-support .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 14px 0; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 14px; font-weight: bold; text-align: left; color: #1A1A1A; gap: 16px; }
+    .faq-support .faq-a { display: none; padding: 0 0 14px; font-size: 13px; color: #666666; line-height: 1.6; }
+    .faq-support .faq-a.open { display: block; }
+
+    .history-list { list-style: none; }
+    .history-item { padding: 12px 0; border-bottom: 1px solid #F5F5F5; display: flex; gap: 12px; align-items: flex-start; }
+    .history-item:last-child { border-bottom: none; }
+    .h-icon { width: 32px; height: 32px; background: #F5F5F5; border: 1px solid #CCCCCC; display: flex; align-items: center; justify-content: center; color: #666666; flex-shrink: 0; }
+    .h-body { flex: 1; }
+    .h-title { font-size: 13px; font-weight: bold; margin-bottom: 2px; }
+    .h-date { font-size: 11px; color: #666666; }
+    .h-status { font-size: 11px; padding: 2px 8px; border: 1px solid #CCCCCC; display: inline-block; margin-top: 4px; }
+    .h-status.resolved { background: #1A1A1A; color: #FFFFFF; border-color: #1A1A1A; }
+
+    @media print { .sidebar { display: none; } .main-content { margin-left: 0; } }
+  </style>
+</head>
+<body class="dashboard-body">
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo"><div class="logo-box">[Logo LDS]</div></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="layout-dashboard"></i></span>Dashboard
+      </a>
+      <a href="deplacements.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="bus"></i></span>Mes déplacements
+      </a>
+      <a href="documents.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="file-text"></i></span>Documents
+      </a>
+      <a href="profil.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="user"></i></span>Mon profil
+      </a>
+      <a href="support.html" class="nav-item active">
+        <span class="icon-nav"><i data-lucide="message-circle"></i></span>Support
+      </a>
+    </nav>
+    <div class="sidebar-sep"></div>
+    <div class="sidebar-footer">
+      <a href="../index.html" class="sidebar-back-link"><i data-lucide="arrow-left"></i> Retour au site</a>
+      <p class="club-name">SC Riviera Rugby</p>
+      <p class="club-offer">Offre : Premium</p>
+      <button class="btn-logout">Se déconnecter</button>
+    </div>
+  </aside>
+
+  <!-- CONTENU -->
+  <main class="main-content">
+    <div class="page-header">
+      <h1 class="page-title">Support</h1>
+      <p class="page-subtitle">Saison 2024-2025 · Abonnement Premium</p>
+    </div>
+
+    <div class="support-grid">
+
+      <!-- COLONNE PRINCIPALE -->
+      <div>
+
+        <!-- MESSAGERIE DIRECTE -->
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-title">Messagerie directe</div>
+
+          <div class="interlocutor-card">
+            <div class="interlocutor-avatar"><i data-lucide="user" class="icon-sm"></i></div>
+            <div class="interlocutor-info">
+              <div class="name">France Bausset</div>
+              <div class="role">Votre interlocutrice LDS</div>
+              <div class="avail"><span class="avail-dot"></span>Disponible 7j/7 en période de déplacement</div>
+            </div>
+          </div>
+
+          <ul class="message-thread">
+            <li class="msg-item">
+              <div class="msg-meta">
+                <span class="msg-sender">France Bausset (LDS)</span>
+                <span class="msg-date">10 mars 2025 à 14h22</span>
+              </div>
+              <div class="msg-bubble from-lds">Bonjour, l'hôtel Ibis Toulouse Centre est confirmé pour votre déplacement du 14-15 mars. Check-in à 18h, parking bus disponible. Je vous envoie le récapitulatif PDF d'ici ce soir.</div>
+            </li>
+            <li class="msg-item">
+              <div class="msg-meta">
+                <span class="msg-sender">Julien R. (SC Riviera Rugby)</span>
+                <span class="msg-date">10 mars 2025 à 15h48</span>
+              </div>
+              <div class="msg-bubble">Parfait merci. Est-ce que le restaurant pour le dîner du vendredi est également confirmé ?</div>
+            </li>
+            <li class="msg-item">
+              <div class="msg-meta">
+                <span class="msg-sender">France Bausset (LDS)</span>
+                <span class="msg-date">10 mars 2025 à 16h05</span>
+              </div>
+              <div class="msg-bubble from-lds">Pas encore, je suis en attente de confirmation du restaurant sportif près du Stadium. Je reviens vers vous sous 48h maximum.</div>
+            </li>
+          </ul>
+
+          <div class="compose-area">
+            <textarea placeholder="Écrivez votre message à France Bausset…"></textarea>
+            <div class="compose-footer">
+              <span class="compose-hint">Réponse garantie sous 2h en jours ouvrés · 4h le week-end</span>
+              <button class="btn-send"><i data-lucide="send" class="icon-xs"></i>Envoyer</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIGNALER UN INCIDENT -->
+        <div class="card">
+          <div class="card-title">Signaler un incident</div>
+          <div class="urgency-notice"><i data-lucide="alert-triangle" class="icon-xs"></i>En cas d'urgence pendant un déplacement, appelez directement le <strong style="margin-left:4px;">06 XX XX XX XX</strong></div>
+          <form class="incident-form" onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Déplacement concerné</label>
+                <select>
+                  <option>Toulouse · 15 mars 2025</option>
+                  <option>Paris · 1 mars 2025</option>
+                  <option>Lyon · 29 mars 2025</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Type d'incident</label>
+                <select>
+                  <option>Sélectionner…</option>
+                  <option>Problème hébergement</option>
+                  <option>Problème transport</option>
+                  <option>Problème restauration</option>
+                  <option>Prestataire absent / non conforme</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Niveau d'urgence</label>
+                <select>
+                  <option>Normal</option>
+                  <option>Urgent</option>
+                  <option>Critique — en cours de déplacement</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Date / heure de l'incident</label>
+                <input type="text" placeholder="ex. 14 mars 2025 à 18h30">
+              </div>
+              <div class="form-group full">
+                <label>Description</label>
+                <textarea rows="3" placeholder="Décrivez l'incident en détail : ce qui s'est passé, qui est concerné, ce que vous avez déjà tenté…"></textarea>
+              </div>
+            </div>
+            <button class="btn-incident"><i data-lucide="flag" class="icon-xs"></i>Signaler l'incident</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- COLONNE DROITE -->
+      <div>
+
+        <!-- FAQ SUPPORT -->
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-title">Questions fréquentes</div>
+          <div class="faq-support">
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaqSupport(this)">
+                Quel est le délai de réponse ?
+                <span class="icon-nav"><i data-lucide="chevron-down"></i></span>
+              </button>
+              <div class="faq-a">Sous 2h en jours ouvrés (9h-18h), sous 4h le samedi et dimanche. En période de déplacement actif, France est joignable en direct.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaqSupport(this)">
+                Comment modifier un déplacement en cours ?
+                <span class="icon-nav"><i data-lucide="chevron-down"></i></span>
+              </button>
+              <div class="faq-a">Envoyez un message via la messagerie en précisant le déplacement et la modification souhaitée. France prend en charge la coordination avec les prestataires.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaqSupport(this)">
+                Que faire si un prestataire ne se présente pas ?
+                <span class="icon-nav"><i data-lucide="chevron-down"></i></span>
+              </button>
+              <div class="faq-a">Signalez un incident en urgence via le formulaire ci-contre ou appelez directement France. LDS active immédiatement une solution de remplacement dans son réseau.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaqSupport(this)">
+                Comment ajouter un déplacement hors abonnement ?
+                <span class="icon-nav"><i data-lucide="chevron-down"></i></span>
+              </button>
+              <div class="faq-a">Depuis la page "Mes déplacements", cliquez sur "+ Déplacement supplémentaire" en bas de liste. Tarification à l'acte selon votre offre.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HISTORIQUE ÉCHANGES -->
+        <div class="card">
+          <div class="card-title">Historique des échanges</div>
+          <ul class="history-list">
+            <li class="history-item">
+              <div class="h-icon"><i data-lucide="message-circle" class="icon-xs"></i></div>
+              <div class="h-body">
+                <div class="h-title">Message — Confirmation hôtel Toulouse</div>
+                <div class="h-date">10 mars 2025</div>
+                <span class="h-status resolved">Résolu</span>
+              </div>
+            </li>
+            <li class="history-item">
+              <div class="h-icon"><i data-lucide="flag" class="icon-xs"></i></div>
+              <div class="h-body">
+                <div class="h-title">Incident — Retard bus Paris (1 mars)</div>
+                <div class="h-date">1 mars 2025</div>
+                <span class="h-status resolved">Résolu</span>
+              </div>
+            </li>
+            <li class="history-item">
+              <div class="h-icon"><i data-lucide="message-circle" class="icon-xs"></i></div>
+              <div class="h-body">
+                <div class="h-title">Message — Demande régime sans gluten</div>
+                <div class="h-date">20 février 2025</div>
+                <span class="h-status resolved">Résolu</span>
+              </div>
+            </li>
+            <li class="history-item">
+              <div class="h-icon"><i data-lucide="message-circle" class="icon-xs"></i></div>
+              <div class="h-body">
+                <div class="h-title">Message — Ajout joueur Thomas Petit</div>
+                <div class="h-date">5 janvier 2025</div>
+                <span class="h-status resolved">Résolu</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+<script>
+  lucide.createIcons();
+  function toggleFaqSupport(btn) { btn.nextElementSibling.classList.toggle('open'); }
+</script>
+</body>
+</html>

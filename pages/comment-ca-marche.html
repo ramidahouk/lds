@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment ça marche — LDS Les Déplacements Sportifs</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .page-hero { padding: 64px 48px 48px; border-bottom: 1px solid #CCCCCC; text-align: center; }
+    .page-hero h1 { font-size: 38px; font-weight: bold; margin-bottom: 14px; }
+    .page-hero p  { font-size: 18px; color: #666666; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    /* 6 étapes */
+    .steps-section { padding: 72px 48px; }
+    .steps-full { max-width: 860px; margin: 0 auto; }
+    .step-full { display: flex; gap: 32px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #CCCCCC; }
+    .step-full:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .step-full-num { width: 52px; height: 52px; background: #1A1A1A; color: #FFFFFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: bold; flex-shrink: 0; }
+    .step-full-content h3 { font-size: 18px; font-weight: bold; margin-bottom: 10px; line-height: 1.3; }
+    .step-full-content p  { font-size: 14px; color: #666666; line-height: 1.7; }
+
+    /* One-shot vs abonnement */
+    .compare-mode { padding: 72px 48px; background: #F5F5F5; }
+    .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .mode-card { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 36px 28px; }
+    .mode-card.featured { border: 2px solid #1A1A1A; }
+    .mode-card h3 { font-size: 20px; font-weight: bold; margin-bottom: 8px; }
+    .mode-card .mode-sub { font-size: 14px; color: #666666; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #CCCCCC; }
+    .mode-card ul { list-style: none; margin-bottom: 24px; }
+    .mode-card ul li { font-size: 14px; padding: 8px 0; border-bottom: 1px solid #F5F5F5; display: flex; align-items: flex-start; gap: 8px; }
+    .mode-card ul li .icon-check { color: #666666; margin-top: 2px; }
+
+    /* Ce que LDS ne fait pas */
+    .not-section { padding: 72px 48px; }
+    .not-section h2 { font-size: 30px; font-weight: bold; text-align: center; margin-bottom: 16px; }
+    .not-intro { text-align: center; font-size: 15px; color: #666666; max-width: 580px; margin: 0 auto 48px; line-height: 1.7; }
+    .not-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .not-card { border: 1px solid #CCCCCC; padding: 28px 20px; }
+    .not-card h4 { font-size: 15px; font-weight: bold; margin-bottom: 8px; }
+    .not-card p  { font-size: 13px; color: #666666; line-height: 1.6; }
+
+    .cta-section { background: #666666; color: #FFFFFF; text-align: center; padding: 72px 48px; }
+    .cta-section h2 { font-size: 30px; font-weight: bold; color: #FFFFFF; margin-bottom: 16px; }
+    .cta-section p  { font-size: 16px; color: #CCCCCC; margin-bottom: 36px; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media print { nav { position: static; } .nav-actions { display: none; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo"><a href="../index.html" style="text-decoration:none;color:inherit;">[Logo LDS]</a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="offres.html">Notre service</a></li>
+    <li><a href="handisport.html">Handisport</a></li>
+    <li><a href="partenaires.html">Partenaires</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="a-propos.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="contact.html" class="btn-primary">Tester l'offre Découverte</a>
+    <a href="../app/dashboard.html" class="btn-secondary">Espace client <i data-lucide="arrow-right" class="icon-nav"></i></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <h1>Simple. Clair. Sans surprise.</h1>
+  <p>De la prise de contact à la fin du déplacement, voici exactement comment LDS fonctionne.</p>
+</div>
+
+<!-- LES 6 ÉTAPES -->
+<section class="steps-section">
+  <h2 class="section-title">Les 6 étapes d'un déplacement avec LDS</h2>
+  <div class="steps-full">
+    <div class="step-full">
+      <div class="step-full-num">1</div>
+      <div class="step-full-content">
+        <h3>Premier contact et qualification des besoins</h3>
+        <p>On échange sur votre club : discipline, nombre d'athlètes, fréquence des déplacements, contraintes spécifiques (handisport, budget, destinations). 15 minutes suffisent pour cadrer la saison.</p>
+      </div>
+    </div>
+    <div class="step-full">
+      <div class="step-full-num">2</div>
+      <div class="step-full-content">
+        <h3>Construction du calendrier de déplacements</h3>
+        <p>Dès la signature, on construit le calendrier complet de la saison avec vous. Chaque match à l'extérieur est identifié, les contraintes sont notées, les priorités sont établies.</p>
+      </div>
+    </div>
+    <div class="step-full">
+      <div class="step-full-num">3</div>
+      <div class="step-full-content">
+        <h3>Coordination transport, hôtel et restauration</h3>
+        <p>Pour chaque déplacement, LDS coordonne les trois piliers logistiques en s'appuyant sur notre réseau de prestataires préqualifiés. Pas de sous-traitance anonyme.</p>
+      </div>
+    </div>
+    <div class="step-full">
+      <div class="step-full-num">4</div>
+      <div class="step-full-content">
+        <h3>Validation et récapitulatif avant chaque déplacement</h3>
+        <p>Vous recevez un récapitulatif complet avant chaque départ : horaires, adresses, contacts prestataires, informations pratiques. Vous validez, on gère.</p>
+      </div>
+    </div>
+    <div class="step-full">
+      <div class="step-full-num">5</div>
+      <div class="step-full-content">
+        <h3>Rappel J-10 et suivi</h3>
+        <p>10 jours avant chaque déplacement, vous recevez un rappel avec le statut de chaque élément (hôtel confirmé, transport validé, restauration en cours). Aucune surprise le jour J.</p>
+      </div>
+    </div>
+    <div class="step-full">
+      <div class="step-full-num">6</div>
+      <div class="step-full-content">
+        <h3>Accès espace client pour suivre en temps réel</h3>
+        <p>Via votre espace client, vous suivez le statut de chaque déplacement, téléchargez vos documents, et consultez votre calendrier de saison à tout moment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONE SHOT VS ABONNEMENT -->
+<section class="compare-mode">
+  <h2 class="section-title">Découverte ou abonnement : quelle différence ?</h2>
+  <div class="mode-grid">
+    <div class="mode-card">
+      <h3>Offre Découverte</h3>
+      <p class="mode-sub">150€ · 1 déplacement · Sans engagement</p>
+      <ul>
+        <li><i data-lucide="check" class="icon-check"></i>Idéale pour tester LDS sans risque</li>
+        <li><i data-lucide="check" class="icon-check"></i>Vous choisissez le déplacement</li>
+        <li><i data-lucide="check" class="icon-check"></i>Pas de calendrier de saison</li>
+        <li><i data-lucide="check" class="icon-check"></i>Garantie satisfait ou remboursé</li>
+        <li><i data-lucide="check" class="icon-check"></i>Déductible d'un abonnement sous 30 jours</li>
+      </ul>
+      <a href="contact.html" class="btn-secondary">Démarrer avec Découverte</a>
+    </div>
+    <div class="mode-card featured">
+      <h3>Abonnement Standard / Premium</h3>
+      <p class="mode-sub">À partir de 1 200€ / an · Toute la saison</p>
+      <ul>
+        <li><i data-lucide="check" class="icon-check"></i>Calendrier de saison complet planifié dès le départ</li>
+        <li><i data-lucide="check" class="icon-check"></i>Interlocuteur attitré ou dédié</li>
+        <li><i data-lucide="check" class="icon-check"></i>Accès espace client permanent</li>
+        <li><i data-lucide="check" class="icon-check"></i>Rappels automatiques J-10</li>
+        <li><i data-lucide="check" class="icon-check"></i>Tarifs négociés sur le volume</li>
+      </ul>
+      <a href="contact.html" class="btn-primary">Voir nos offres</a>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE LDS NE FAIT PAS -->
+<section class="not-section">
+  <h2>Ce que LDS ne fait pas</h2>
+  <p class="not-intro">Par souci de transparence, voici ce qui est hors de notre périmètre actuel.</p>
+  <div class="not-grid">
+    <div class="not-card">
+      <h4>Billetterie sportive</h4>
+      <p>LDS n'achète pas les billets d'entrée aux matchs. Nous gérons le déplacement de l'équipe, pas l'accès aux enceintes sportives pour les spectateurs.</p>
+    </div>
+    <div class="not-card">
+      <h4>Gestion financière du club</h4>
+      <p>Nous ne gérons pas la comptabilité ni les remboursements internes du club. LDS émet une facture globale pour le déplacement coordonné.</p>
+    </div>
+    <div class="not-card">
+      <h4>Déplacements personnels</h4>
+      <p>LDS est une solution B2B pour clubs sportifs. Nous n'intervenons pas pour des déplacements personnels ou des voyages de loisirs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Prêt à commencer ?</h2>
+  <p>Testez LDS sur un premier déplacement. Satisfait ou remboursé.</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-primary">Démarrer avec l'offre Découverte</a>
+    <a href="offres.html" class="btn-outline-light">Voir nos offres</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">[Logo LDS]</div>
+  <ul class="footer-links">
+    <li><a href="#">Mentions légales</a></li>
+    <li><a href="#">CGV</a></li>
+    <li><a href="#">Politique de confidentialité</a></li>
+  </ul>
+  <div class="footer-right">
+    <p class="footer-contact">contact@ldsdeplacements.fr</p>
+    <div class="footer-social">
+      <div class="social-icon" title="LinkedIn"><i data-lucide="linkedin"></i></div>
+      <div class="social-icon" title="Instagram"><i data-lucide="instagram"></i></div>
+    </div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

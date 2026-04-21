@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace client — LDS Les Déplacements Sportifs</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="dashboard-body">
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-box">[Logo LDS]</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item active">
+        <span class="icon-nav"><i data-lucide="layout-dashboard"></i></span>
+        Dashboard
+      </a>
+      <a href="deplacements.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="bus"></i></span>
+        Mes déplacements
+      </a>
+      <a href="documents.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="file-text"></i></span>
+        Documents
+      </a>
+      <a href="profil.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="user"></i></span>
+        Mon profil
+      </a>
+      <a href="support.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="message-circle"></i></span>
+        Support
+      </a>
+    </nav>
+
+    <div class="sidebar-sep"></div>
+
+    <div class="sidebar-footer">
+      <a href="../index.html" class="sidebar-back-link">
+        <i data-lucide="arrow-left"></i> Retour au site
+      </a>
+      <p class="club-name">SC Riviera Rugby</p>
+      <p class="club-offer">Offre : Premium</p>
+      <button class="btn-logout">Se déconnecter</button>
+    </div>
+  </aside>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="main-content">
+
+    <!-- HEADER -->
+    <div class="page-header">
+      <h1 class="page-title">Bonjour, SC Riviera Rugby</h1>
+      <p class="page-subtitle">Saison 2024-2025 · Abonnement Premium</p>
+      <div class="alert-banner">
+        <div class="alert-content">
+          <span class="icon-alert"><i data-lucide="alert-triangle"></i></span>
+          <span class="alert-text">Rappel : déplacement dans 10 jours · Toulouse, 15 mars 2025</span>
+        </div>
+        <button class="btn-sm">Voir le détail</button>
+      </div>
+    </div>
+
+    <!-- BLOC 1 — PROCHAIN DÉPLACEMENT -->
+    <div class="card featured next-trip">
+      <div class="card-title">Prochain déplacement</div>
+      <div class="trip-destination">Toulouse · 15 mars 2025</div>
+      <div class="status-row">
+        <div class="status-item">
+          <span class="status-label">
+            <span class="icon-sm"><i data-lucide="building-2"></i></span>
+            Hôtel
+          </span>
+          <span class="badge badge-confirmed">Confirmé</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">
+            <span class="icon-sm"><i data-lucide="bus"></i></span>
+            Transport
+          </span>
+          <span class="badge badge-validated">Validé</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">
+            <span class="icon-sm"><i data-lucide="utensils"></i></span>
+            Restauration
+          </span>
+          <span class="badge badge-in-progress">En cours</span>
+        </div>
+      </div>
+      <div class="trip-buttons">
+        <button class="btn-trip-primary">Voir le détail complet</button>
+        <button class="btn-trip-secondary">Télécharger le récapitulatif PDF</button>
+      </div>
+    </div>
+
+    <!-- LIGNE 2 — CALENDRIER + ABONNEMENT -->
+    <div class="row-2">
+
+      <!-- BLOC 2 — CALENDRIER -->
+      <div class="card">
+        <div class="card-title">Mes déplacements · Saison 2024-2025</div>
+        <table class="calendar-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Destination</th>
+              <th>Équipe</th>
+              <th>Statut global</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>15 mars 2025</td>
+              <td>Toulouse</td>
+              <td>Équipe première</td>
+              <td>
+                <span class="t-badge t-confirmed">
+                  <span class="icon-xs"><i data-lucide="check"></i></span>
+                  Confirmé
+                </span>
+              </td>
+              <td>
+                <button class="t-action">Voir</button>
+                <button class="t-action">PDF</button>
+              </td>
+            </tr>
+            <tr>
+              <td>29 mars 2025</td>
+              <td>Lyon</td>
+              <td>Équipe première</td>
+              <td>
+                <span class="t-badge t-progress">
+                  <span class="icon-xs"><i data-lucide="refresh-cw"></i></span>
+                  En cours
+                </span>
+              </td>
+              <td><button class="t-action">Voir</button></td>
+            </tr>
+            <tr>
+              <td>12 avril 2025</td>
+              <td>Bordeaux</td>
+              <td>Équipe première</td>
+              <td>
+                <span class="t-badge t-plan">
+                  <span class="icon-xs"><i data-lucide="clock"></i></span>
+                  À planifier
+                </span>
+              </td>
+              <td><button class="t-action">Voir</button></td>
+            </tr>
+            <tr>
+              <td>26 avril 2025</td>
+              <td>Marseille</td>
+              <td>Équipe première</td>
+              <td>
+                <span class="t-badge t-plan">
+                  <span class="icon-xs"><i data-lucide="clock"></i></span>
+                  À planifier
+                </span>
+              </td>
+              <td><button class="t-action">Voir</button></td>
+            </tr>
+            <tr>
+              <td>10 mai 2025</td>
+              <td>Nantes</td>
+              <td>Équipe première</td>
+              <td>
+                <span class="t-badge t-plan">
+                  <span class="icon-xs"><i data-lucide="clock"></i></span>
+                  À planifier
+                </span>
+              </td>
+              <td><button class="t-action">Voir</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- BLOC 4 — MON ABONNEMENT -->
+      <div class="card">
+        <div class="card-title">Mon abonnement</div>
+        <div class="sub-grid">
+          <div class="sub-field">
+            <div class="label">Offre</div>
+            <div class="value">Premium</div>
+          </div>
+          <div class="sub-field">
+            <div class="label">Déplacements inclus</div>
+            <div class="value">12</div>
+          </div>
+          <div class="sub-field">
+            <div class="label">Utilisés</div>
+            <div class="value">7</div>
+          </div>
+          <div class="sub-field">
+            <div class="label">Restants</div>
+            <div class="value">5</div>
+          </div>
+        </div>
+        <div class="progress-block">
+          <div class="progress-info">
+            <span>Utilisation</span>
+            <span>7 / 12 déplacements</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 58.33%"></div>
+          </div>
+        </div>
+        <p class="renew-line">Renouvellement : <span>septembre 2025</span></p>
+        <button class="sub-link">Gérer mon abonnement →</button>
+      </div>
+
+    </div>
+
+    <!-- BLOC 3 — DOCUMENTS RÉCENTS -->
+    <div class="card">
+      <div class="card-title">Documents récents</div>
+      <ul class="doc-list">
+        <li class="doc-item">
+          <div class="doc-icon icon-doc"><i data-lucide="file-text"></i></div>
+          <div class="doc-info">
+            <div class="doc-name">Récapitulatif_Toulouse_15mars2025.pdf</div>
+            <div class="doc-date">10 mars 2025</div>
+          </div>
+          <button class="btn-dl">Télécharger</button>
+        </li>
+        <li class="doc-item">
+          <div class="doc-icon icon-doc"><i data-lucide="file-text"></i></div>
+          <div class="doc-info">
+            <div class="doc-name">Récapitulatif_Paris_01mars2025.pdf</div>
+            <div class="doc-date">24 février 2025</div>
+          </div>
+          <button class="btn-dl">Télécharger</button>
+        </li>
+        <li class="doc-item">
+          <div class="doc-icon icon-doc"><i data-lucide="file-text"></i></div>
+          <div class="doc-info">
+            <div class="doc-name">Contrat_Saison_2024-2025.pdf</div>
+            <div class="doc-date">1 septembre 2024</div>
+          </div>
+          <button class="btn-dl">Télécharger</button>
+        </li>
+      </ul>
+      <button class="see-all">Voir tous les documents →</button>
+    </div>
+
+  </main>
+</div>
+
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejoindre le réseau — LDS Les Déplacements Sportifs</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .page-hero { padding: 64px 48px 48px; border-bottom: 1px solid #CCCCCC; text-align: center; }
+    .page-hero h1 { font-size: 38px; font-weight: bold; margin-bottom: 14px; }
+    .page-hero p  { font-size: 18px; color: #666666; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+    .pourquoi { padding: 72px 48px; background: #F5F5F5; }
+    .avantages-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+    .avantage-card { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 28px 20px; text-align: center; }
+    .avantage-card .icon-section { display: flex; justify-content: center; color: #666666; margin-bottom: 14px; }
+    .avantage-card h3 { font-size: 15px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+    .avantage-card p  { font-size: 13px; color: #666666; line-height: 1.6; }
+
+    .criteres { padding: 72px 48px; }
+    .criteres-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; }
+    .critere-card { border: 1px solid #CCCCCC; padding: 32px 24px; }
+    .critere-card h3 { font-size: 18px; font-weight: bold; margin-bottom: 6px; }
+    .critere-tag { font-size: 12px; background: #F5F5F5; border: 1px solid #CCCCCC; padding: 3px 10px; display: inline-block; margin-bottom: 18px; color: #666666; }
+    .critere-card ul { list-style: none; margin-bottom: 24px; }
+    .critere-card ul li { font-size: 14px; padding: 8px 0; border-bottom: 1px solid #F5F5F5; display: flex; align-items: flex-start; gap: 8px; }
+    .critere-card ul li .icon-check { color: #1A1A1A; margin-top: 2px; }
+
+    .certification { padding: 72px 48px; background: #F5F5F5; text-align: center; }
+    .certification h2 { font-size: 30px; font-weight: bold; margin-bottom: 16px; }
+    .certification p { font-size: 15px; color: #666666; max-width: 580px; margin: 0 auto 48px; line-height: 1.7; }
+    .cert-steps { display: flex; gap: 0; max-width: 860px; margin: 0 auto; }
+    .cert-step { flex: 1; text-align: center; padding: 28px 20px; background: #FFFFFF; border: 1px solid #CCCCCC; border-right: none; }
+    .cert-step:last-child { border-right: 1px solid #CCCCCC; }
+    .cert-num { width: 40px; height: 40px; background: #1A1A1A; color: #FFFFFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; margin: 0 auto 12px; }
+    .cert-step h4 { font-size: 14px; font-weight: bold; margin-bottom: 6px; }
+    .cert-step p  { font-size: 13px; color: #666666; line-height: 1.5; }
+
+    .carte-section { padding: 72px 48px; }
+    .carte-placeholder { height: 320px; background: #F5F5F5; border: 1px solid #CCCCCC; display: flex; align-items: center; justify-content: center; color: #666666; font-size: 14px; margin-bottom: 16px; }
+    .carte-legend { font-size: 13px; color: #666666; text-align: center; }
+
+    /* Formulaire candidature */
+    .candidature { padding: 72px 48px; background: #F5F5F5; }
+    .candi-tabs { display: flex; gap: 0; margin-bottom: 40px; border-bottom: 2px solid #CCCCCC; }
+    .candi-tab { padding: 12px 28px; background: none; border: none; font-family: inherit; font-size: 14px; font-weight: bold; cursor: pointer; color: #666666; border-bottom: 2px solid transparent; margin-bottom: -2px; }
+    .candi-tab.active { color: #1A1A1A; border-bottom-color: #1A1A1A; }
+    .candi-form { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 40px; max-width: 680px; }
+    .candi-form h3 { font-size: 20px; font-weight: bold; margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #CCCCCC; background: #FFFFFF; font-family: inherit; font-size: 14px; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #1A1A1A; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .radio-group { display: flex; gap: 20px; }
+    .radio-group label { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: normal; cursor: pointer; }
+
+    @media print { nav { position: static; } .nav-actions { display: none; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo"><a href="../index.html" style="text-decoration:none;color:inherit;">[Logo LDS]</a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="offres.html">Notre service</a></li>
+    <li><a href="handisport.html">Handisport</a></li>
+    <li><a href="partenaires.html">Partenaires</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="a-propos.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="contact.html" class="btn-primary">Tester l'offre Découverte</a>
+    <a href="../app/dashboard.html" class="btn-secondary">Espace client <i data-lucide="arrow-right" class="icon-nav"></i></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <h1>Rejoignez le réseau LDS</h1>
+  <p>Hôtels, restaurants, transporteurs : devenez partenaire préqualifié LDS et bénéficiez d'un flux régulier de clients sportifs tout au long de la saison.</p>
+</div>
+
+<!-- POURQUOI REJOINDRE -->
+<section class="pourquoi">
+  <h2 class="section-title">Pourquoi rejoindre le réseau ?</h2>
+  <div class="avantages-grid">
+    <div class="avantage-card">
+      <div class="icon-section"><i data-lucide="calendar" class="icon-section"></i></div>
+      <h3>Volume régulier et anticipé</h3>
+      <p>Les clubs réservent sur toute la saison. Vous avez de la visibilité sur vos réservations à venir.</p>
+    </div>
+    <div class="avantage-card">
+      <div class="icon-section"><i data-lucide="badge-check" class="icon-section"></i></div>
+      <h3>Badge Partenaire Préqualifié LDS</h3>
+      <p>Un label visible qui distingue votre établissement et renforce votre crédibilité auprès des clubs.</p>
+    </div>
+    <div class="avantage-card">
+      <div class="icon-section"><i data-lucide="map-pin" class="icon-section"></i></div>
+      <h3>Référencement sur le site</h3>
+      <p>Votre structure est visible sur la carte des partenaires LDS, consultée par les clubs avant chaque déplacement.</p>
+    </div>
+    <div class="avantage-card">
+      <div class="icon-section"><i data-lucide="users" class="icon-section"></i></div>
+      <h3>Visibilité auprès des clubs</h3>
+      <p>Accès à une clientèle de clubs sportifs locaux qui ne passent pas par les plateformes généralistes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CRITÈRES DE SÉLECTION -->
+<section class="criteres">
+  <h2 class="section-title">Critères de sélection par type</h2>
+  <div class="criteres-grid">
+    <div class="critere-card">
+      <h3>Hôtels</h3>
+      <span class="critere-tag">Hébergement</span>
+      <ul>
+        <li><i data-lucide="check" class="icon-check"></i>Accessibilité PMR vérifiable</li>
+        <li><i data-lucide="check" class="icon-check"></i>Capacité groupes (min. 10 chambres)</li>
+        <li><i data-lucide="check" class="icon-check"></i>Espaces communs pour briefing</li>
+        <li><i data-lucide="check" class="icon-check"></i>Petit déjeuner adapté sportifs</li>
+        <li><i data-lucide="check" class="icon-check"></i>Parking bus / véhicule</li>
+      </ul>
+      <a href="#candidature" class="btn-secondary">Candidater hôtel</a>
+    </div>
+    <div class="critere-card">
+      <h3>Restaurants</h3>
+      <span class="critere-tag">Restauration</span>
+      <ul>
+        <li><i data-lucide="check" class="icon-check"></i>Menus adaptés charge sportive</li>
+        <li><i data-lucide="check" class="icon-check"></i>Flexibilité horaires groupes</li>
+        <li><i data-lucide="check" class="icon-check"></i>Capacité groupes (min. 20 couverts)</li>
+        <li><i data-lucide="check" class="icon-check"></i>Accessibilité PMR</li>
+        <li><i data-lucide="check" class="icon-check"></i>Service rapide (timing matchs)</li>
+      </ul>
+      <a href="#candidature" class="btn-secondary">Candidater restaurant</a>
+    </div>
+    <div class="critere-card">
+      <h3>Transporteurs</h3>
+      <span class="critere-tag">Transport</span>
+      <ul>
+        <li><i data-lucide="check" class="icon-check"></i>Véhicules homologués et récents</li>
+        <li><i data-lucide="check" class="icon-check"></i>Capacité groupes (min. 15 places)</li>
+        <li><i data-lucide="check" class="icon-check"></i>Ponctualité documentée</li>
+        <li><i data-lucide="check" class="icon-check"></i>Véhicules PMR disponibles</li>
+        <li><i data-lucide="check" class="icon-check"></i>Couverture assurance professionnelle</li>
+      </ul>
+      <a href="#candidature" class="btn-secondary">Candidater transporteur</a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATION LDS -->
+<section class="certification">
+  <h2>La certification LDS</h2>
+  <p>Dans les 6 à 12 mois suivant le lancement, LDS mettra en place un processus de certification formel pour les partenaires du réseau. Rejoindre maintenant, c'est être parmi les premiers référencés.</p>
+  <div class="cert-steps">
+    <div class="cert-step">
+      <div class="cert-num">1</div>
+      <h4>Candidature</h4>
+      <p>Formulaire en ligne + documents de présentation</p>
+    </div>
+    <div class="cert-step">
+      <div class="cert-num">2</div>
+      <h4>Évaluation</h4>
+      <p>Vérification des critères par l'équipe LDS</p>
+    </div>
+    <div class="cert-step">
+      <div class="cert-num">3</div>
+      <h4>Visite terrain</h4>
+      <p>Visite ou appel de validation (selon type)</p>
+    </div>
+    <div class="cert-step">
+      <div class="cert-num">4</div>
+      <h4>Référencement</h4>
+      <p>Intégration au réseau + badge partenaire</p>
+    </div>
+  </div>
+</section>
+
+<!-- CARTE PARTENAIRES -->
+<section class="carte-section">
+  <h2 class="section-title">Partenaires déjà référencés</h2>
+  <div class="carte-placeholder">[Carte interactive — placeholder — prestataires géolocalisés par région]</div>
+  <p class="carte-legend">Carte des prestataires préqualifiés LDS par région · Mise à jour en temps réel</p>
+</section>
+
+<!-- FORMULAIRE CANDIDATURE -->
+<section class="candidature" id="candidature">
+  <h2 class="section-title">Formulaire de candidature</h2>
+  <div class="candi-tabs">
+    <button class="candi-tab active">Hôtel</button>
+    <button class="candi-tab">Restaurant</button>
+    <button class="candi-tab">Transporteur</button>
+  </div>
+  <div class="candi-form">
+    <h3>Candidature partenaire hôtel</h3>
+    <div class="form-group">
+      <label>Nom de l'établissement *</label>
+      <input type="text" placeholder="Hôtel du Sport">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Ville *</label>
+        <input type="text" placeholder="Nice">
+      </div>
+      <div class="form-group">
+        <label>Département *</label>
+        <input type="text" placeholder="06">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Capacité (nombre de chambres) *</label>
+      <input type="number" placeholder="ex : 40">
+    </div>
+    <div class="form-group">
+      <label>Accessibilité PMR *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="pmr" value="oui"> Oui</label>
+        <label><input type="radio" name="pmr" value="non"> Non</label>
+        <label><input type="radio" name="pmr" value="partiel"> Partielle</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Nom du contact *</label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Téléphone</label>
+      <input type="tel">
+    </div>
+    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:12px 20px;">Envoyer ma candidature</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">[Logo LDS]</div>
+  <ul class="footer-links">
+    <li><a href="#">Mentions légales</a></li>
+    <li><a href="#">CGV</a></li>
+    <li><a href="#">Politique de confidentialité</a></li>
+  </ul>
+  <div class="footer-right">
+    <p class="footer-contact">contact@ldsdeplacements.fr</p>
+    <div class="footer-social">
+      <div class="social-icon" title="LinkedIn"><i data-lucide="linkedin"></i></div>
+      <div class="social-icon" title="Instagram"><i data-lucide="instagram"></i></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  document.querySelectorAll('.candi-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.candi-tab').forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
+      document.querySelector('.candi-form h3').textContent = 'Candidature partenaire ' + this.textContent.toLowerCase();
+    });
+  });
+</script>
+</body>
+</html>

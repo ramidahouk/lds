@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programme clubs pilotes — LDS Les Déplacements Sportifs</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .page-hero { padding: 64px 48px 48px; border-bottom: 1px solid #CCCCCC; text-align: center; }
+    .page-hero .hero-label { font-size: 12px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; color: #666666; margin-bottom: 16px; }
+    .page-hero h1 { font-size: 38px; font-weight: bold; margin-bottom: 14px; }
+    .page-hero p  { font-size: 18px; color: #666666; max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+    .counter-block { display: inline-flex; align-items: center; gap: 16px; border: 2px solid #1A1A1A; padding: 16px 32px; }
+    .counter-num { font-size: 40px; font-weight: bold; line-height: 1; }
+    .counter-label { font-size: 13px; color: #666666; text-align: left; line-height: 1.4; }
+
+    .offre-section { padding: 72px 48px; background: #F5F5F5; }
+    .offre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .offre-card { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 36px 28px; }
+    .offre-card h3 { font-size: 20px; font-weight: bold; margin-bottom: 8px; }
+    .offre-card .badge-pilot { display: inline-block; background: #1A1A1A; color: #FFFFFF; font-size: 11px; padding: 3px 10px; margin-bottom: 16px; font-weight: bold; }
+    .offre-card ul { list-style: none; margin-bottom: 0; }
+    .offre-card ul li { font-size: 14px; padding: 10px 0; border-bottom: 1px solid #F5F5F5; display: flex; align-items: flex-start; gap: 8px; }
+    .offre-card ul li .icon-check { color: #1A1A1A; margin-top: 2px; }
+
+    .contrepartie { padding: 72px 48px; }
+    .contrepartie-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+    .contrepartie-inner h2 { font-size: 30px; font-weight: bold; margin-bottom: 16px; }
+    .contrepartie-inner p { font-size: 15px; color: #666666; margin-bottom: 32px; line-height: 1.7; }
+    .contra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
+    .contra-card { border: 1px solid #CCCCCC; padding: 24px 20px; }
+    .contra-card h4 { font-size: 15px; font-weight: bold; margin-bottom: 8px; }
+    .contra-card p  { font-size: 13px; color: #666666; line-height: 1.6; }
+
+    /* Formulaire */
+    .candidature-section { padding: 72px 48px; background: #F5F5F5; }
+    .candi-form { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 40px; max-width: 640px; margin: 0 auto; }
+    .candi-form h3 { font-size: 22px; font-weight: bold; margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #CCCCCC; background: #FFFFFF; font-family: inherit; font-size: 14px; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #1A1A1A; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    @media print { nav { position: static; } .nav-actions { display: none; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo"><a href="../index.html" style="text-decoration:none;color:inherit;">[Logo LDS]</a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="offres.html">Notre service</a></li>
+    <li><a href="handisport.html">Handisport</a></li>
+    <li><a href="partenaires.html">Partenaires</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="a-propos.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="contact.html" class="btn-primary">Tester l'offre Découverte</a>
+    <a href="../app/dashboard.html" class="btn-secondary">Espace client <i data-lucide="arrow-right" class="icon-nav"></i></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-label">Programme limité · Lancement 2025</div>
+  <h1>Faites partie des 10 clubs fondateurs</h1>
+  <p>Accès prioritaire, tarif préférentiel, suivi renforcé. En échange d'un témoignage et de votre participation à l'amélioration du service.</p>
+  <div class="counter-block">
+    <div class="counter-num">7</div>
+    <div class="counter-label">places<br>disponibles<br>[placeholder]</div>
+  </div>
+</div>
+
+<!-- CE QUE LE PROGRAMME OFFRE -->
+<section class="offre-section">
+  <h2 class="section-title">Ce que le programme offre</h2>
+  <div class="offre-grid">
+    <div class="offre-card">
+      <div class="badge-pilot">Standard Pilote</div>
+      <h3>Abonnement Standard</h3>
+      <ul>
+        <li><i data-lucide="check" class="icon-check"></i>20% de réduction sur le tarif Standard (960€ au lieu de 1 200€)</li>
+        <li><i data-lucide="check" class="icon-check"></i>6 à 10 déplacements sur la saison</li>
+        <li><i data-lucide="check" class="icon-check"></i>Accès prioritaire aux partenaires du réseau</li>
+        <li><i data-lucide="check" class="icon-check"></i>Suivi personnalisé renforcé avec France Bausset</li>
+        <li><i data-lucide="check" class="icon-check"></i>Accès espace client en avant-première</li>
+      </ul>
+    </div>
+    <div class="offre-card">
+      <div class="badge-pilot">Premium Pilote</div>
+      <h3>Abonnement Premium</h3>
+      <ul>
+        <li><i data-lucide="check" class="icon-check"></i>20% de réduction sur le tarif Premium (1 760€ au lieu de 2 200€)</li>
+        <li><i data-lucide="check" class="icon-check"></i>10+ déplacements ou contraintes complexes</li>
+        <li><i data-lucide="check" class="icon-check"></i>Accessibilité handisport vérifiée</li>
+        <li><i data-lucide="check" class="icon-check"></i>Interlocuteur dédié France Bausset</li>
+        <li><i data-lucide="check" class="icon-check"></i>Accès espace client en avant-première</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTREPARTIES -->
+<section class="contrepartie">
+  <div class="contrepartie-inner">
+    <h2>Ce qu'on attend en retour</h2>
+    <p>Le programme clubs pilotes est un partenariat. Votre retour d'expérience nous aide à construire un meilleur service pour tous les clubs.</p>
+    <div class="contra-grid">
+      <div class="contra-card">
+        <h4>Un témoignage après la première saison</h4>
+        <p>Une citation ou un retour vidéo court (2 min max) sur votre expérience avec LDS, utilisé sur notre site et nos réseaux.</p>
+      </div>
+      <div class="contra-card">
+        <h4>Participation à l'amélioration du service</h4>
+        <p>2 à 3 échanges de feedback dans la saison (30 min chacun) pour partager vos retours et contribuer à l'évolution du service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE -->
+<section class="candidature-section">
+  <h2 class="section-title">Candidater au programme pilote</h2>
+  <div class="candi-form">
+    <h3>Votre candidature</h3>
+    <div class="form-group">
+      <label>Nom du club *</label>
+      <input type="text" placeholder="ex : SC Riviera Rugby">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Discipline sportive *</label>
+        <select>
+          <option value="">Sélectionner...</option>
+          <option>Rugby</option>
+          <option>Football</option>
+          <option>Basketball</option>
+          <option>Volleyball</option>
+          <option>Handball</option>
+          <option>Handisport</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Nombre de déplacements / an *</label>
+        <select>
+          <option value="">Sélectionner...</option>
+          <option>6 à 10 (Standard)</option>
+          <option>10 à 15 (Premium)</option>
+          <option>15+</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Offre souhaitée *</label>
+      <select>
+        <option value="">Sélectionner...</option>
+        <option>Standard Pilote (960€ / an)</option>
+        <option>Premium Pilote (1 760€ / an)</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Prénom et nom *</label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label>Rôle dans le club</label>
+        <input type="text" placeholder="Président, Coach...">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email">
+      </div>
+      <div class="form-group">
+        <label>Téléphone</label>
+        <input type="tel">
+      </div>
+    </div>
+    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:12px 20px;">Candidater au programme pilote</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">[Logo LDS]</div>
+  <ul class="footer-links">
+    <li><a href="#">Mentions légales</a></li>
+    <li><a href="#">CGV</a></li>
+    <li><a href="#">Politique de confidentialité</a></li>
+  </ul>
+  <div class="footer-right">
+    <p class="footer-contact">contact@ldsdeplacements.fr</p>
+    <div class="footer-social">
+      <div class="social-icon" title="LinkedIn"><i data-lucide="linkedin"></i></div>
+      <div class="social-icon" title="Instagram"><i data-lucide="instagram"></i></div>
+    </div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

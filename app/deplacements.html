@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes déplacements — LDS Espace client</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .filters-bar {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .filter-select {
+      padding: 8px 12px; border: 1px solid #CCCCCC; background: #FFFFFF;
+      font-family: inherit; font-size: 13px; color: #1A1A1A;
+    }
+    .filter-label { font-size: 13px; color: #666666; }
+    .filter-sep { color: #CCCCCC; }
+    .results-count { font-size: 13px; color: #666666; margin-left: auto; }
+
+    .calendar-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .calendar-table th {
+      text-align: left; padding: 9px 12px; background: #F5F5F5;
+      border-bottom: 2px solid #CCCCCC; font-weight: bold; color: #666666;
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .calendar-table td {
+      padding: 10px 12px; border-bottom: 1px solid #F5F5F5; vertical-align: middle;
+    }
+    .calendar-table tr:last-child td { border-bottom: none; }
+    .calendar-table tr:hover td { background: #F5F5F5; }
+
+    .t-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 2px 9px; font-size: 11px; border: 1px solid #CCCCCC;
+    }
+    .t-badge.t-confirmed { background: #1A1A1A; color: #FFFFFF; border-color: #1A1A1A; }
+    .t-badge.t-progress  { background: #F5F5F5; color: #1A1A1A; }
+    .t-badge.t-plan      { background: #FFFFFF; color: #666666; }
+
+    .t-action {
+      display: inline-block; padding: 3px 10px; border: 1px solid #CCCCCC;
+      font-size: 11px; cursor: pointer; margin-right: 4px;
+      color: #1A1A1A; font-family: inherit; background: transparent;
+      text-decoration: none;
+    }
+    .t-action:hover { background: #F5F5F5; }
+
+    .add-banner {
+      margin-top: 20px; padding: 16px 20px; border: 1px dashed #CCCCCC;
+      display: flex; align-items: center; justify-content: space-between;
+      background: #F5F5F5;
+    }
+    .add-banner p { font-size: 13px; color: #666666; }
+
+    @media print { .sidebar { display: none; } .main-content { margin-left: 0; } }
+  </style>
+</head>
+<body class="dashboard-body">
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo"><div class="logo-box">[Logo LDS]</div></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="layout-dashboard"></i></span>Dashboard
+      </a>
+      <a href="deplacements.html" class="nav-item active">
+        <span class="icon-nav"><i data-lucide="bus"></i></span>Mes déplacements
+      </a>
+      <a href="documents.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="file-text"></i></span>Documents
+      </a>
+      <a href="profil.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="user"></i></span>Mon profil
+      </a>
+      <a href="support.html" class="nav-item">
+        <span class="icon-nav"><i data-lucide="message-circle"></i></span>Support
+      </a>
+    </nav>
+    <div class="sidebar-sep"></div>
+    <div class="sidebar-footer">
+      <a href="../index.html" class="sidebar-back-link">
+        <i data-lucide="arrow-left"></i> Retour au site
+      </a>
+      <p class="club-name">SC Riviera Rugby</p>
+      <p class="club-offer">Offre : Premium</p>
+      <button class="btn-logout">Se déconnecter</button>
+    </div>
+  </aside>
+
+  <!-- CONTENU -->
+  <main class="main-content">
+    <div class="page-header">
+      <h1 class="page-title">Mes déplacements</h1>
+      <p class="page-subtitle">Saison 2024-2025 · Abonnement Premium</p>
+    </div>
+
+    <div class="card">
+      <!-- FILTRES -->
+      <div class="filters-bar">
+        <span class="filter-label">Filtrer par</span>
+        <select class="filter-select">
+          <option>Tous les statuts</option>
+          <option>Confirmé</option>
+          <option>En cours</option>
+          <option>À planifier</option>
+        </select>
+        <select class="filter-select">
+          <option>Toutes les dates</option>
+          <option>Passés</option>
+          <option>À venir</option>
+        </select>
+        <select class="filter-select">
+          <option>Toutes les équipes</option>
+          <option>Équipe première</option>
+          <option>Équipe réserve</option>
+        </select>
+        <span class="results-count">10 déplacements</span>
+      </div>
+
+      <!-- TABLEAU -->
+      <table class="calendar-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Destination</th>
+            <th>Équipe</th>
+            <th>Statut global</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 mars 2025</td><td>Paris</td><td>Équipe première</td>
+            <td><span class="t-badge t-confirmed"><span class="icon-xs"><i data-lucide="check"></i></span>Confirmé</span></td>
+            <td><a href="deplacement-detail.html" class="t-action">Voir</a><a href="#" class="t-action">PDF</a></td>
+          </tr>
+          <tr>
+            <td>15 mars 2025</td><td>Toulouse</td><td>Équipe première</td>
+            <td><span class="t-badge t-confirmed"><span class="icon-xs"><i data-lucide="check"></i></span>Confirmé</span></td>
+            <td><a href="deplacement-detail.html" class="t-action">Voir</a><a href="#" class="t-action">PDF</a></td>
+          </tr>
+          <tr>
+            <td>29 mars 2025</td><td>Lyon</td><td>Équipe première</td>
+            <td><span class="t-badge t-progress"><span class="icon-xs"><i data-lucide="refresh-cw"></i></span>En cours</span></td>
+            <td><a href="deplacement-detail.html" class="t-action">Voir</a></td>
+          </tr>
+          <tr>
+            <td>12 avril 2025</td><td>Bordeaux</td><td>Équipe première</td>
+            <td><span class="t-badge t-plan"><span class="icon-xs"><i data-lucide="clock"></i></span>À planifier</span></td>
+            <td><a href="deplacement-detail.html" class="t-action">Voir</a></td>
+          </tr>
+          <tr>
+            <td>26 avril 2025</td><td>Marseille</td><td>Équipe première</td>
+            <td><span class="t-badge t-plan"><span class="icon-xs"><i data-lucide="clock"></i></span>À planifier</span></td>
+            <td><a href="deplacement-detail.html" class="t-action">Voir</a></td>
+          </tr>
+          <tr>
+            <td>10 mai 2025</td><td>Nantes</td><td>Équipe première</td>
+            <td><span class="t-badge t-plan"><span class="icon-xs"><i data-lucide="clock"></i></span>À planifier</span></td>
+            <td><a href="deplacement-detail.html" class="t-action">Voir</a></td>
+          </tr>
+          <tr>
+            <td>24 mai 2025</td><td>Strasbourg</td><td>Équipe première</td>
+            <td><span class="t-badge t-plan"><span class="icon-xs"><i data-lucide="clock"></i></span>À planifier</span></td>
+            <td><a href="deplacement-detail.html" class="t-action">Voir</a></td>
+          </tr>
+          <tr>
+            <td>7 juin 2025</td><td>Lille</td><td>Équipe première</td>
+            <td><span class="t-badge t-plan"><span class="icon-xs"><i data-lucide="clock"></i></span>À planifier</span></td>
+            <td><a href="deplacement-detail.html" class="t-action">Voir</a></td>
+          </tr>
+          <tr>
+            <td>21 juin 2025</td><td>Rennes</td><td>Équipe première</td>
+            <td><span class="t-badge t-plan"><span class="icon-xs"><i data-lucide="clock"></i></span>À planifier</span></td>
+            <td><a href="deplacement-detail.html" class="t-action">Voir</a></td>
+          </tr>
+          <tr>
+            <td>5 juillet 2025</td><td>Nice</td><td>Équipe première</td>
+            <td><span class="t-badge t-plan"><span class="icon-xs"><i data-lucide="clock"></i></span>À planifier</span></td>
+            <td><a href="deplacement-detail.html" class="t-action">Voir</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- AJOUTER UN DÉPLACEMENT -->
+      <div class="add-banner">
+        <p>Besoin d'ajouter un déplacement hors calendrier prévu ?</p>
+        <button class="btn-sm">+ Déplacement supplémentaire</button>
+      </div>
+    </div>
+  </main>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>

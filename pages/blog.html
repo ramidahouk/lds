@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — LDS Les Déplacements Sportifs</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .page-hero { padding: 64px 48px 48px; border-bottom: 1px solid #CCCCCC; text-align: center; }
+    .page-hero h1 { font-size: 38px; font-weight: bold; margin-bottom: 14px; }
+    .page-hero p  { font-size: 18px; color: #666666; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    .blog-body { padding: 72px 48px; }
+    .blog-layout { display: grid; grid-template-columns: 1fr 280px; gap: 48px; align-items: start; }
+
+    /* Article mis en avant */
+    .featured-article { border: 1px solid #CCCCCC; margin-bottom: 48px; }
+    .featured-img { height: 300px; background: #F5F5F5; border-bottom: 1px solid #CCCCCC; display: flex; align-items: center; justify-content: center; color: #666666; font-size: 14px; }
+    .featured-content { padding: 32px; }
+    .article-cat { font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.8px; color: #666666; margin-bottom: 10px; }
+    .featured-content h2 { font-size: 24px; font-weight: bold; margin-bottom: 10px; line-height: 1.3; }
+    .featured-content .article-meta { font-size: 12px; color: #666666; margin-bottom: 16px; }
+    .featured-content p { font-size: 14px; color: #666666; line-height: 1.7; margin-bottom: 20px; }
+
+    /* Grille articles */
+    .articles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .article-card { border: 1px solid #CCCCCC; }
+    .article-card:hover { border-color: #1A1A1A; }
+    .article-img { height: 160px; background: #F5F5F5; border-bottom: 1px solid #CCCCCC; display: flex; align-items: center; justify-content: center; color: #666666; font-size: 13px; }
+    .article-content { padding: 20px; }
+    .article-content h3 { font-size: 15px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+    .article-content .article-meta { font-size: 12px; color: #666666; margin-bottom: 10px; }
+    .article-content p { font-size: 13px; color: #666666; line-height: 1.6; }
+    .read-more { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #1A1A1A; text-decoration: none; margin-top: 12px; font-weight: bold; }
+    .read-more:hover { text-decoration: underline; }
+
+    /* Sidebar */
+    .blog-sidebar { position: sticky; top: 80px; }
+    .sidebar-widget { border: 1px solid #CCCCCC; padding: 24px; margin-bottom: 20px; background: #FFFFFF; }
+    .sidebar-widget h3 { font-size: 15px; font-weight: bold; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #CCCCCC; }
+    .cat-list { list-style: none; }
+    .cat-list li { padding: 8px 0; border-bottom: 1px solid #F5F5F5; display: flex; justify-content: space-between; font-size: 14px; }
+    .cat-list li:last-child { border-bottom: none; }
+    .cat-count { color: #666666; font-size: 12px; }
+    .sidebar-cta { background: #1A1A1A; padding: 24px; color: #FFFFFF; }
+    .sidebar-cta h3 { font-size: 15px; font-weight: bold; margin-bottom: 10px; color: #FFFFFF; }
+    .sidebar-cta p  { font-size: 13px; color: #CCCCCC; margin-bottom: 16px; line-height: 1.5; }
+
+    @media print { nav { position: static; } .nav-actions { display: none; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo"><a href="../index.html" style="text-decoration:none;color:inherit;">[Logo LDS]</a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="offres.html">Notre service</a></li>
+    <li><a href="handisport.html">Handisport</a></li>
+    <li><a href="partenaires.html">Partenaires</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="a-propos.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="contact.html" class="btn-primary">Tester l'offre Découverte</a>
+    <a href="../app/dashboard.html" class="btn-secondary">Espace client <i data-lucide="arrow-right" class="icon-nav"></i></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <h1>Conseils et ressources pour les clubs sportifs</h1>
+  <p>Organisation, logistique, handisport, budget : tout ce qu'il faut savoir pour mieux gérer vos déplacements.</p>
+</div>
+
+<!-- CORPS -->
+<div class="blog-body">
+  <div class="blog-layout">
+
+    <!-- CONTENU PRINCIPAL -->
+    <div>
+
+      <!-- ARTICLE MIS EN AVANT -->
+      <div class="featured-article">
+        <div class="featured-img">[Image article]</div>
+        <div class="featured-content">
+          <p class="article-cat">Organisation & logistique sportive</p>
+          <h2>Comment organiser une saison complète de déplacements pour un club sportif</h2>
+          <p class="article-meta">15 avril 2025 · 8 min de lecture</p>
+          <p>De la construction du calendrier à la gestion des imprévus, voici la méthode que les clubs les mieux organisés utilisent pour planifier leurs déplacements sur toute la saison sans stress.</p>
+          <a href="article.html" class="btn-secondary">Lire l'article</a>
+        </div>
+      </div>
+
+      <!-- GRILLE ARTICLES -->
+      <div class="articles-grid">
+
+        <div class="article-card">
+          <div class="article-img">[Image]</div>
+          <div class="article-content">
+            <p class="article-cat">Budget & optimisation</p>
+            <h3>5 erreurs qui font perdre du temps et de l'argent aux clubs en déplacement</h3>
+            <p class="article-meta">8 avril 2025 · 5 min</p>
+            <p>Réservation de dernière minute, absence de négociation, prestataires non vérifiés...</p>
+            <a href="article.html" class="read-more">Lire <i data-lucide="arrow-right" class="icon-xs"></i></a>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-img">[Image]</div>
+          <div class="article-content">
+            <p class="article-cat">Handisport & accessibilité</p>
+            <h3>Comment choisir un hébergement adapté pour une équipe handisport</h3>
+            <p class="article-meta">1 avril 2025 · 6 min</p>
+            <p>Les critères à vérifier absolument avant de réserver, que le site internet ne vous dit pas.</p>
+            <a href="article.html" class="read-more">Lire <i data-lucide="arrow-right" class="icon-xs"></i></a>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-img">[Image]</div>
+          <div class="article-content">
+            <p class="article-cat">Organisation & logistique</p>
+            <h3>Déplacement de championnat : check-list logistique pour les managers de club</h3>
+            <p class="article-meta">22 mars 2025 · 4 min</p>
+            <p>Les 20 points à valider avant chaque déplacement pour ne rien oublier le jour J.</p>
+            <a href="article.html" class="read-more">Lire <i data-lucide="arrow-right" class="icon-xs"></i></a>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-img">[Image]</div>
+          <div class="article-content">
+            <p class="article-cat">Budget & optimisation</p>
+            <h3>Réservation de dernière minute : combien cela coûte vraiment à un club sportif ?</h3>
+            <p class="article-meta">15 mars 2025 · 5 min</p>
+            <p>Chiffres à l'appui, le coût réel de la désorganisation logistique pour un club amateur.</p>
+            <a href="article.html" class="read-more">Lire <i data-lucide="arrow-right" class="icon-xs"></i></a>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-img">[Image]</div>
+          <div class="article-content">
+            <p class="article-cat">Témoignages & cas concrets</p>
+            <h3>SC Riviera Rugby : comment l'équipe a récupéré 6h par semaine sur la logistique</h3>
+            <p class="article-meta">5 mars 2025 · 7 min</p>
+            <p>Retour d'expérience du Team Manager Julien R. sur sa première saison avec LDS.</p>
+            <a href="article.html" class="read-more">Lire <i data-lucide="arrow-right" class="icon-xs"></i></a>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-img">[Image]</div>
+          <div class="article-content">
+            <p class="article-cat">Handisport & accessibilité</p>
+            <h3>Accessibilité PMR dans les transports sportifs : ce que dit la réglementation</h3>
+            <p class="article-meta">20 février 2025 · 5 min</p>
+            <p>Obligations légales, véhicules homologués, responsabilité du club : ce qu'il faut savoir.</p>
+            <a href="article.html" class="read-more">Lire <i data-lucide="arrow-right" class="icon-xs"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="blog-sidebar">
+      <div class="sidebar-widget">
+        <h3>Catégories</h3>
+        <ul class="cat-list">
+          <li>Organisation & logistique sportive <span class="cat-count">12</span></li>
+          <li>Handisport & accessibilité <span class="cat-count">8</span></li>
+          <li>Budget & optimisation <span class="cat-count">7</span></li>
+          <li>Témoignages & cas concrets <span class="cat-count">4</span></li>
+        </ul>
+      </div>
+      <div class="sidebar-cta">
+        <h3>Arrêtez de gérer ça vous-même</h3>
+        <p>LDS s'occupe de toute la logistique de vos déplacements. Testez sur un premier match.</p>
+        <a href="contact.html" class="btn-outline-light" style="width:100%;justify-content:center;">Demander un devis gratuit</a>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">[Logo LDS]</div>
+  <ul class="footer-links">
+    <li><a href="#">Mentions légales</a></li>
+    <li><a href="#">CGV</a></li>
+    <li><a href="#">Politique de confidentialité</a></li>
+  </ul>
+  <div class="footer-right">
+    <p class="footer-contact">contact@ldsdeplacements.fr</p>
+    <div class="footer-social">
+      <div class="social-icon" title="LinkedIn"><i data-lucide="linkedin"></i></div>
+      <div class="social-icon" title="Instagram"><i data-lucide="instagram"></i></div>
+    </div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

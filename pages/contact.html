@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Devis — LDS Les Déplacements Sportifs</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .page-hero { padding: 64px 48px 48px; border-bottom: 1px solid #CCCCCC; text-align: center; }
+    .page-hero h1 { font-size: 38px; font-weight: bold; margin-bottom: 14px; }
+    .page-hero p  { font-size: 18px; color: #666666; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    .contact-body { padding: 72px 48px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
+
+    /* FORMULAIRE */
+    .form-section h2 { font-size: 24px; font-weight: bold; margin-bottom: 32px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 6px; color: #1A1A1A; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 10px 12px; border: 1px solid #CCCCCC;
+      background: #FFFFFF; font-family: inherit; font-size: 14px; color: #1A1A1A;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { outline: none; border-color: #1A1A1A; }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group .hint { font-size: 12px; color: #666666; margin-top: 4px; }
+    .checkbox-group { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 24px; }
+    .checkbox-group input[type="checkbox"] { width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; }
+    .checkbox-group label { font-size: 13px; color: #666666; line-height: 1.5; }
+
+    /* ALTERNATIVE APPEL */
+    .call-alt { background: #F5F5F5; border: 1px solid #CCCCCC; padding: 24px; margin-top: 32px; }
+    .call-alt h3 { font-size: 16px; font-weight: bold; margin-bottom: 8px; }
+    .call-alt p  { font-size: 14px; color: #666666; margin-bottom: 16px; line-height: 1.6; }
+    .btn-calendly {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border: 1px solid #1A1A1A; background: #FFFFFF;
+      font-size: 14px; color: #1A1A1A; text-decoration: none; font-family: inherit; cursor: pointer;
+    }
+    .btn-calendly:hover { background: #F5F5F5; }
+
+    /* SIDEBAR DROITE */
+    .contact-sidebar { position: sticky; top: 80px; }
+    .sidebar-card { background: #F5F5F5; border: 1px solid #CCCCCC; padding: 28px; margin-bottom: 20px; }
+    .sidebar-card h3 { font-size: 16px; font-weight: bold; margin-bottom: 16px; }
+    .step-mini { display: flex; gap: 14px; margin-bottom: 16px; }
+    .step-mini:last-child { margin-bottom: 0; }
+    .step-num { width: 28px; height: 28px; background: #1A1A1A; color: #FFFFFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; flex-shrink: 0; }
+    .step-mini p { font-size: 13px; color: #666666; line-height: 1.5; margin: 0; padding-top: 4px; }
+
+    /* FAQ conversion */
+    .faq-contact { padding: 72px 48px; background: #F5F5F5; }
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid #CCCCCC; }
+    .faq-item:first-child { border-top: 1px solid #CCCCCC; }
+    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 18px 0; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 16px; font-weight: bold; text-align: left; color: #1A1A1A; gap: 16px; }
+    .faq-question:hover { color: #666666; }
+    .faq-answer { display: none; padding: 0 0 18px; }
+    .faq-answer.open { display: block; }
+    .faq-answer p { font-size: 14px; color: #666666; line-height: 1.7; }
+
+    @media print { nav { position: static; } .nav-actions { display: none; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo"><a href="../index.html" style="text-decoration:none;color:inherit;">[Logo LDS]</a></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="offres.html">Notre service</a></li>
+    <li><a href="handisport.html">Handisport</a></li>
+    <li><a href="partenaires.html">Partenaires</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="a-propos.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="contact.html" class="btn-primary">Tester l'offre Découverte</a>
+    <a href="../app/dashboard.html" class="btn-secondary">Espace client <i data-lucide="arrow-right" class="icon-nav"></i></a>
+  </div>
+</nav>
+
+<!-- HERO PAGE -->
+<div class="page-hero">
+  <h1>On vous répond sous 24h</h1>
+  <p>Décrivez votre club et vos besoins. On revient vers vous avec une proposition adaptée, sans engagement.</p>
+</div>
+
+<!-- CORPS -->
+<div class="contact-body">
+  <div class="contact-grid">
+
+    <!-- FORMULAIRE -->
+    <div class="form-section">
+      <h2>Votre demande de devis</h2>
+      <form>
+        <div class="form-group">
+          <label>Nom du club *</label>
+          <input type="text" placeholder="ex : SC Riviera Rugby">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Discipline sportive *</label>
+            <select>
+              <option value="">Sélectionner...</option>
+              <option>Rugby</option>
+              <option>Football</option>
+              <option>Basketball</option>
+              <option>Volleyball</option>
+              <option>Handball</option>
+              <option>Natation</option>
+              <option>Athlétisme</option>
+              <option>Handisport</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Nombre de déplacements / an *</label>
+            <select>
+              <option value="">Sélectionner...</option>
+              <option>1 (test Découverte)</option>
+              <option>6 à 10 (Standard)</option>
+              <option>10 à 15 (Premium)</option>
+              <option>15+ (Premium ou Événement)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Contraintes spécifiques</label>
+          <select>
+            <option value="">Aucune contrainte particulière</option>
+            <option>Handisport — accessibilité PMR requise</option>
+            <option>Véhicules adaptés nécessaires</option>
+            <option>Déplacements hors France</option>
+            <option>Plusieurs équipes simultanément</option>
+            <option>Autre (préciser dans le message)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Prénom et nom *</label>
+            <input type="text" placeholder="France Dupont">
+          </div>
+          <div class="form-group">
+            <label>Rôle dans le club</label>
+            <input type="text" placeholder="ex : Président, Coach, Team Manager">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" placeholder="contact@monclub.fr">
+          </div>
+          <div class="form-group">
+            <label>Téléphone</label>
+            <input type="tel" placeholder="06 XX XX XX XX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Message libre</label>
+          <textarea placeholder="Décrivez votre situation, vos contraintes, vos questions..."></textarea>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="consent">
+          <label for="consent">J'accepte que LDS utilise ces informations pour me recontacter dans le cadre de ma demande de devis.</label>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:14px 20px;font-size:15px;">Envoyer ma demande de devis</button>
+      </form>
+
+      <!-- ALTERNATIVE APPEL -->
+      <div class="call-alt">
+        <h3>Préférez-vous un appel ?</h3>
+        <p>Réservez un créneau de 15 minutes directement dans l'agenda de France. On fait le point ensemble sur vos besoins.</p>
+        <a href="#" class="btn-calendly">
+          <i data-lucide="calendar" class="icon-sm"></i>
+          Réserver un appel découverte de 15 min
+        </a>
+        <p class="hint" style="margin-top:10px;">[Lien Calendly — placeholder]</p>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="contact-sidebar">
+      <div class="sidebar-card">
+        <h3>Ce qui se passe après votre envoi</h3>
+        <div class="step-mini">
+          <div class="step-num">1</div>
+          <p>Vous recevez un email de confirmation dans les minutes suivantes.</p>
+        </div>
+        <div class="step-mini">
+          <div class="step-num">2</div>
+          <p>France ou un interlocuteur LDS vous répond sous 24h avec une première proposition.</p>
+        </div>
+        <div class="step-mini">
+          <div class="step-num">3</div>
+          <p>On affine ensemble le planning de la saison avant de valider.</p>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>Garantie satisfait ou remboursé</h3>
+        <p style="font-size:13px;color:#666666;line-height:1.6;">Sur l'offre Découverte, si le premier déplacement ne vous convient pas, vous êtes intégralement remboursé. Aucune question posée.</p>
+      </div>
+      <div class="sidebar-card">
+        <h3>Contactez-nous directement</h3>
+        <p style="font-size:13px;color:#666666;margin-bottom:8px;">contact@ldsdeplacements.fr</p>
+        <p style="font-size:13px;color:#666666;">Réponse garantie sous 24h ouvrées.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FAQ CONVERSION -->
+<section class="faq-contact">
+  <h2 class="section-title">Avant de nous contacter</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Combien de temps faut-il pour organiser un premier déplacement ?
+        <span class="icon-nav"><i data-lucide="chevron-down"></i></span>
+      </button>
+      <div class="faq-answer">
+        <p>Comptez 5 à 7 jours ouvrés pour un premier déplacement avec l'offre Découverte. Pour les abonnements, nous construisons le calendrier de toute la saison dès la signature.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        LDS travaille-t-il avec tous les sports ?
+        <span class="icon-nav"><i data-lucide="chevron-down"></i></span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui, LDS intervient sur tous les sports collectifs et individuels, valides et handisport. Nous nous adaptons aux contraintes spécifiques de chaque discipline.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Peut-on tester LDS sans s'engager sur une saison complète ?
+        <span class="icon-nav"><i data-lucide="chevron-down"></i></span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui, c'est exactement l'objet de l'offre Découverte à 150€ : un seul déplacement, sans engagement, avec garantie satisfait ou remboursé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">[Logo LDS]</div>
+  <ul class="footer-links">
+    <li><a href="#">Mentions légales</a></li>
+    <li><a href="#">CGV</a></li>
+    <li><a href="#">Politique de confidentialité</a></li>
+  </ul>
+  <div class="footer-right">
+    <p class="footer-contact">contact@ldsdeplacements.fr</p>
+    <div class="footer-social">
+      <div class="social-icon" title="LinkedIn"><i data-lucide="linkedin"></i></div>
+      <div class="social-icon" title="Instagram"><i data-lucide="instagram"></i></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  function toggleFaq(btn) { btn.nextElementSibling.classList.toggle('open'); }
+</script>
+</body>
+</html>
