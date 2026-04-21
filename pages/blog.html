@@ -16,7 +16,8 @@
 
     /* Article mis en avant */
     .featured-article { border: 1px solid #CCCCCC; margin-bottom: 48px; }
-    .featured-img { height: 300px; background: #F5F5F5; border-bottom: 1px solid #CCCCCC; display: flex; align-items: center; justify-content: center; color: #666666; font-size: 14px; }
+    .featured-img { height: 300px; border-bottom: 1px solid #CCCCCC; overflow: hidden; }
+    .featured-img img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
     .featured-content { padding: 32px; }
     .article-cat { font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.8px; color: #666666; margin-bottom: 10px; }
     .featured-content h2 { font-size: 24px; font-weight: bold; margin-bottom: 10px; line-height: 1.3; }
@@ -85,7 +86,9 @@
 
       <!-- ARTICLE MIS EN AVANT -->
       <div class="featured-article">
-        <div class="featured-img">[Image article]</div>
+        <div class="featured-img">
+          <img src="../assets/images/buses in motion.webp" alt="Bus en mouvement sur la route">
+        </div>
         <div class="featured-content">
           <p class="article-cat">Organisation & logistique sportive</p>
           <h2>Comment organiser une saison complète de déplacements pour un club sportif</h2>
