@@ -8,64 +8,118 @@
   <link rel="icon" href="../assets/images/siteicon.ico" type="image/x-icon">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
-    .page-hero { padding: 64px 48px 48px; border-bottom: 1px solid #CCCCCC; text-align: center; }
-    .page-hero h1 { font-size: 38px; font-weight: bold; margin-bottom: 14px; }
-    .page-hero p  { font-size: 18px; color: #666666; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+    .contact-hero {
+      padding: 64px 48px 56px; border-bottom: 1px solid #CCCCCC; text-align: center;
+    }
+    .contact-hero .label {
+      font-size: 11px; font-weight: bold; letter-spacing: 1.2px;
+      text-transform: uppercase; color: #F26430; margin-bottom: 14px;
+    }
+    .contact-hero h1 { font-size: 40px; font-weight: bold; margin-bottom: 14px; line-height: 1.15; }
+    .contact-hero p  { font-size: 17px; color: #666666; max-width: 520px; margin: 0 auto; line-height: 1.7; }
 
-    .contact-body { padding: 72px 48px; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
+    .contact-body { padding: 64px 48px; display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: start; }
 
-    /* FORMULAIRE */
-    .form-section h2 { font-size: 24px; font-weight: bold; margin-bottom: 32px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    /* FORM */
+    .form-block { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 40px; }
+    .form-block-title { font-size: 20px; font-weight: bold; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid #F0F0F0; }
     .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 6px; color: #1A1A1A; }
+    .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 6px; }
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%; padding: 10px 12px; border: 1px solid #CCCCCC;
       background: #FFFFFF; font-family: inherit; font-size: 14px; color: #1A1A1A;
-      appearance: none;
     }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus { outline: none; border-color: #1A1A1A; }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-group .hint { font-size: 12px; color: #666666; margin-top: 4px; }
-    .checkbox-group { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 24px; }
-    .checkbox-group input[type="checkbox"] { width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; }
-    .checkbox-group label { font-size: 13px; color: #666666; line-height: 1.5; }
+    .form-group textarea:focus { outline: none; border-color: #BC380F; }
+    .form-group textarea { resize: vertical; min-height: 96px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-    /* ALTERNATIVE APPEL */
-    .call-alt { background: #F5F5F5; border: 1px solid #CCCCCC; padding: 24px; margin-top: 32px; }
-    .call-alt h3 { font-size: 16px; font-weight: bold; margin-bottom: 8px; }
-    .call-alt p  { font-size: 14px; color: #666666; margin-bottom: 16px; line-height: 1.6; }
-    .btn-calendly {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 20px; border: 1px solid #1A1A1A; background: #FFFFFF;
-      font-size: 14px; color: #1A1A1A; text-decoration: none; font-family: inherit; cursor: pointer;
+    .handisport-toggle {
+      display: flex; align-items: flex-start; gap: 12px;
+      border: 1px solid #CCCCCC; padding: 14px 16px; cursor: pointer; width: 100%;
+      background: #FFFFFF;
     }
-    .btn-calendly:hover { background: #F5F5F5; }
+    .handisport-toggle input[type="checkbox"] { width: 16px; height: 16px; accent-color: #BC380F; flex-shrink: 0; margin-top: 2px; }
+    .handisport-toggle .toggle-label { font-size: 14px; font-weight: bold; display: block; margin-bottom: 2px; }
+    .handisport-toggle .toggle-sub  { font-size: 12px; color: #666666; }
 
-    /* SIDEBAR DROITE */
-    .contact-sidebar { position: sticky; top: 80px; }
-    .sidebar-card { background: #F5F5F5; border: 1px solid #CCCCCC; padding: 28px; margin-bottom: 20px; }
-    .sidebar-card h3 { font-size: 16px; font-weight: bold; margin-bottom: 16px; }
-    .step-mini { display: flex; gap: 14px; margin-bottom: 16px; }
-    .step-mini:last-child { margin-bottom: 0; }
-    .step-num { width: 28px; height: 28px; background: #3574F2; color: #FFFFFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; flex-shrink: 0; }
-    .step-mini p { font-size: 13px; color: #666666; line-height: 1.5; margin: 0; padding-top: 4px; }
+    .form-submit { margin-top: 28px; }
+    .form-submit .btn-primary { width: 100%; justify-content: center; padding: 14px 28px; font-size: 15px; }
 
-    /* FAQ conversion */
-    .faq-contact { padding: 72px 48px; }
-    .faq-list { max-width: 760px; margin: 0 auto; }
-    .faq-item { border-bottom: 1px solid #CCCCCC; }
-    .faq-item:first-child { border-top: 1px solid #CCCCCC; }
-    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 18px 0; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 16px; font-weight: bold; text-align: left; color: #1A1A1A; gap: 16px; }
-    .faq-question:hover { color: #666666; }
-    .faq-answer { display: none; padding: 0 0 18px; }
-    .faq-answer.open { display: block; }
-    .faq-answer p { font-size: 14px; color: #666666; line-height: 1.7; }
+    .form-divider {
+      text-align: center; margin: 24px 0; font-size: 13px; color: #666666;
+      position: relative;
+    }
+    .form-divider::before,
+    .form-divider::after {
+      content: ''; position: absolute; top: 50%; width: 44%; height: 1px; background: #CCCCCC;
+    }
+    .form-divider::before { left: 0; }
+    .form-divider::after  { right: 0; }
+
+    .calendly-cta {
+      display: flex; align-items: center; justify-content: space-between;
+      border: 1px solid #73A3EF; padding: 18px 20px; gap: 16px;
+    }
+    .calendly-cta-text .title { font-size: 15px; font-weight: bold; margin-bottom: 4px; }
+    .calendly-cta-text .sub   { font-size: 13px; color: #666666; }
+    .btn-calendly {
+      background: transparent; color: #73A3EF; border: 1px solid #73A3EF;
+      padding: 10px 20px; font-size: 13px; font-weight: bold; cursor: pointer;
+      white-space: nowrap; font-family: inherit; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
+    }
+    .btn-calendly:hover { background: #73A3EF; color: #FFFFFF; }
+
+    /* SIDEBAR */
+    .contact-sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+    .next-steps { border: 1px solid #CCCCCC; padding: 28px; border-left: 4px solid #73A3EF; }
+    .next-steps h3 { font-size: 16px; font-weight: bold; margin-bottom: 20px; }
+    .step-item { display: flex; gap: 16px; margin-bottom: 20px; }
+    .step-item:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 28px; height: 28px; background: #BC380F; color: #FFFFFF;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: bold; flex-shrink: 0; margin-top: 1px;
+    }
+    .step-content .step-title { font-size: 14px; font-weight: bold; margin-bottom: 4px; }
+    .step-content .step-desc  { font-size: 13px; color: #666666; line-height: 1.6; }
+
+    .reassurance { border: 1px solid #CCCCCC; padding: 24px; }
+    .reassurance h3 { font-size: 14px; font-weight: bold; margin-bottom: 14px; }
+    .reassurance-list { list-style: none; }
+    .reassurance-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13px; color: #666666; padding: 8px 0;
+      border-bottom: 1px solid #F0F0F0; line-height: 1.5;
+    }
+    .reassurance-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .reassurance-list li .icon-check { color: #3574F2; flex-shrink: 0; margin-top: 2px; }
+
+    .faq-sidebar { border: 1px solid #CCCCCC; padding: 24px; }
+    .faq-sidebar h3 { font-size: 14px; font-weight: bold; margin-bottom: 16px; }
+    .faq-s-item { border-bottom: 1px solid #F0F0F0; }
+    .faq-s-item:last-child { border-bottom: none; }
+    .faq-s-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0; background: none; border: none; cursor: pointer;
+      font-family: inherit; font-size: 13px; font-weight: bold; text-align: left;
+      color: #1A1A1A; gap: 12px;
+    }
+    .faq-s-q:hover { color: #BC380F; }
+    .faq-s-a { display: none; padding: 0 0 12px; font-size: 13px; color: #666666; line-height: 1.6; }
+    .faq-s-a.open { display: block; }
+
+    .contact-cta-final {
+      border-top: 1px solid #CCCCCC; padding: 64px 48px; text-align: center;
+    }
+    .contact-cta-final h2 { font-size: 28px; font-weight: bold; margin-bottom: 12px; }
+    .contact-cta-final p  { font-size: 15px; color: #666666; margin-bottom: 28px; }
+    .contact-cta-final .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
     @media print { nav { position: static; } .nav-actions { display: none; } }
   </style>
@@ -74,7 +128,11 @@
 
 <!-- NAVIGATION -->
 <nav>
-  <div class="nav-logo"><a href="../index.html" style="text-decoration:none;color:inherit;"><img src="../assets/logo/roundstar.png" alt="LDS"></a></div>
+  <div class="nav-logo">
+    <a href="../index.html" style="text-decoration:none;color:inherit;">
+      <img src="../assets/logo/roundstar.png" alt="LDS">
+    </a>
+  </div>
   <ul class="nav-links">
     <li><a href="../index.html">Accueil</a></li>
     <li><a href="offres.html">Notre service</a></li>
@@ -82,7 +140,7 @@
     <li><a href="partenaires.html">Partenaires</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="a-propos.html">À propos</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" style="color:#BC380F;">Contact</a></li>
   </ul>
   <div class="nav-actions">
     <a href="contact.html" class="btn-primary">Tester l'offre Découverte</a>
@@ -90,169 +148,209 @@
   </div>
 </nav>
 
-<!-- HERO PAGE -->
-<div class="page-hero">
-  <h1>On vous répond sous 24h</h1>
-  <p>Décrivez votre club et vos besoins. On revient vers vous avec une proposition adaptée, sans engagement.</p>
+<!-- HERO -->
+<div class="contact-hero">
+  <div class="label">Réponse garantie sous 24h</div>
+  <h1>On vous répond sous 24h.</h1>
+  <p>Parlez-nous de votre club. On vous prépare une proposition adaptée à votre saison et à vos contraintes spécifiques.</p>
 </div>
 
-<!-- CORPS -->
+<!-- BODY -->
 <div class="contact-body">
-  <div class="contact-grid">
 
-    <!-- FORMULAIRE -->
-    <div class="form-section">
-      <h2>Votre demande de devis</h2>
-      <form>
-        <div class="form-group">
-          <label>Nom du club *</label>
-          <input type="text" placeholder="ex : SC Riviera Rugby">
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Discipline sportive *</label>
-            <select>
-              <option value="">Sélectionner...</option>
-              <option>Rugby</option>
-              <option>Football</option>
-              <option>Basketball</option>
-              <option>Volleyball</option>
-              <option>Handball</option>
-              <option>Natation</option>
-              <option>Athlétisme</option>
-              <option>Handisport</option>
-              <option>Autre</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Nombre de déplacements / an *</label>
-            <select>
-              <option value="">Sélectionner...</option>
-              <option>1 (test Découverte)</option>
-              <option>6 à 10 (Standard)</option>
-              <option>10 à 15 (Premium)</option>
-              <option>15+ (Premium ou Événement)</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Contraintes spécifiques</label>
-          <select>
-            <option value="">Aucune contrainte particulière</option>
-            <option>Handisport — accessibilité PMR requise</option>
-            <option>Véhicules adaptés nécessaires</option>
-            <option>Déplacements hors France</option>
-            <option>Plusieurs équipes simultanément</option>
-            <option>Autre (préciser dans le message)</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Prénom et nom *</label>
-            <input type="text" placeholder="France Dupont">
-          </div>
-          <div class="form-group">
-            <label>Rôle dans le club</label>
-            <input type="text" placeholder="ex : Président, Coach, Team Manager">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Email *</label>
-            <input type="email" placeholder="contact@monclub.fr">
-          </div>
-          <div class="form-group">
-            <label>Téléphone</label>
-            <input type="tel" placeholder="06 XX XX XX XX">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Message libre</label>
-          <textarea placeholder="Décrivez votre situation, vos contraintes, vos questions..."></textarea>
-        </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="consent">
-          <label for="consent">J'accepte que LDS utilise ces informations pour me recontacter dans le cadre de ma demande de devis.</label>
-        </div>
-        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:14px 20px;font-size:15px;">Envoyer ma demande de devis</button>
-      </form>
+  <!-- FORM -->
+  <div class="form-block">
+    <div class="form-block-title">Demande de devis ou d'information</div>
 
-      <!-- ALTERNATIVE APPEL -->
-      <div class="call-alt">
-        <h3>Préférez-vous un appel ?</h3>
-        <p>Réservez un créneau de 15 minutes directement dans l'agenda de France. On fait le point ensemble sur vos besoins.</p>
-        <a href="#" class="btn-calendly">
-          <i data-lucide="calendar" class="icon-sm"></i>
-          Réserver un appel découverte de 15 min
-        </a>
-        <p class="hint" style="margin-top:10px;">[Lien Calendly — placeholder]</p>
+    <div class="form-group">
+      <label>Nom du club *</label>
+      <input type="text" placeholder="ex : SC Riviera Rugby">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Discipline sportive *</label>
+        <select>
+          <option value="">Sélectionner...</option>
+          <option>Rugby</option>
+          <option>Football</option>
+          <option>Basketball</option>
+          <option>Volleyball</option>
+          <option>Handball</option>
+          <option>Natation</option>
+          <option>Handisport</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Déplacements / an *</label>
+        <select>
+          <option value="">Sélectionner...</option>
+          <option>Moins de 6</option>
+          <option>6 à 10</option>
+          <option>10 à 15</option>
+          <option>15+</option>
+        </select>
       </div>
     </div>
 
-    <!-- SIDEBAR -->
-    <div class="contact-sidebar">
-      <div class="sidebar-card">
-        <h3>Ce qui se passe après votre envoi</h3>
-        <div class="step-mini">
-          <div class="step-num">1</div>
-          <p>Vous recevez un email de confirmation dans les minutes suivantes.</p>
+    <div class="form-group">
+      <label>Contraintes spécifiques</label>
+      <label class="handisport-toggle">
+        <input type="checkbox">
+        <div>
+          <span class="toggle-label">Mon club pratique le handisport</span>
+          <span class="toggle-sub">Accessibilité vérifiée, véhicules adaptés, accompagnateurs — on intègre tout</span>
         </div>
-        <div class="step-mini">
-          <div class="step-num">2</div>
-          <p>France ou un interlocuteur LDS vous répond sous 24h avec une première proposition.</p>
-        </div>
-        <div class="step-mini">
-          <div class="step-num">3</div>
-          <p>On affine ensemble le planning de la saison avant de valider.</p>
+      </label>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Prénom et nom *</label>
+        <input type="text" placeholder="France Bausset">
+      </div>
+      <div class="form-group">
+        <label>Rôle dans le club</label>
+        <input type="text" placeholder="Président, Coach, Manager...">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" placeholder="contact@monclub.fr">
+      </div>
+      <div class="form-group">
+        <label>Téléphone</label>
+        <input type="tel" placeholder="06 XX XX XX XX">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Message libre</label>
+      <textarea placeholder="Précisez vos besoins, contraintes particulières, date du prochain déplacement..."></textarea>
+    </div>
+
+    <div class="form-submit">
+      <button class="btn-primary">
+        <i data-lucide="send" class="icon-nav"></i>
+        Envoyer ma demande de devis
+      </button>
+    </div>
+
+    <div class="form-divider">ou</div>
+
+    <div class="calendly-cta">
+      <div class="calendly-cta-text">
+        <div class="title">Préférez-vous un appel ?</div>
+        <div class="sub">Réservez 15 min avec France Bausset — sans formulaire.</div>
+      </div>
+      <a href="#" class="btn-calendly">
+        <i data-lucide="calendar" class="icon-nav"></i>
+        Choisir un créneau
+      </a>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="contact-sidebar">
+
+    <div class="next-steps">
+      <h3>Ce qui se passe après</h3>
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Confirmation dans les 2h</div>
+          <div class="step-desc">Un email récapitulatif de votre demande vous est envoyé immédiatement.</div>
         </div>
       </div>
-      <div class="sidebar-card">
-        <h3>Garantie satisfait ou remboursé</h3>
-        <p style="font-size:13px;color:#666666;line-height:1.6;">Sur l'offre Découverte, si le premier déplacement ne vous convient pas, vous êtes intégralement remboursé. Aucune question posée.</p>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Présentation adaptée sous 24h</div>
+          <div class="step-desc">On vous envoie une proposition personnalisée selon votre club, discipline et contraintes.</div>
+        </div>
       </div>
-      <div class="sidebar-card">
-        <h3>Contactez-nous directement</h3>
-        <p style="font-size:13px;color:#666666;margin-bottom:8px;">contact@ldsdeplacements.fr</p>
-        <p style="font-size:13px;color:#666666;">Réponse garantie sous 24h ouvrées.</p>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Appel découverte de 15 min</div>
+          <div class="step-desc">On échange pour confirmer que LDS correspond à vos besoins. Aucun engagement.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reassurance">
+      <h3>Pourquoi nous faire confiance ?</h3>
+      <ul class="reassurance-list">
+        <li><i data-lucide="check" class="icon-check"></i>Satisfait ou remboursé sur l'offre Découverte</li>
+        <li><i data-lucide="check" class="icon-check"></i>France Bausset — 25 ans de déplacements sportifs vécus de l'intérieur</li>
+        <li><i data-lucide="check" class="icon-check"></i>Réseau partenaires préqualifiés — hôtels, restaurants, transporteurs</li>
+        <li><i data-lucide="check" class="icon-check"></i>Handisport : accessibilité vérifiée sur place, pas sur catalogue</li>
+        <li><i data-lucide="check" class="icon-check"></i>Substitution prestataire en 30 min (offre Premium)</li>
+      </ul>
+    </div>
+
+    <div class="faq-sidebar">
+      <h3>Questions fréquentes</h3>
+
+      <div class="faq-s-item">
+        <button class="faq-s-q">
+          L'offre Découverte est-elle vraiment sans engagement ?
+          <i data-lucide="chevron-down" class="icon-xs"></i>
+        </button>
+        <div class="faq-s-a">
+          Oui. 150€ pour un premier déplacement, satisfait ou remboursé. Si vous signez un abonnement dans les 30 jours, les 150€ sont déduits.
+        </div>
+      </div>
+
+      <div class="faq-s-item">
+        <button class="faq-s-q">
+          Combien de temps pour organiser un déplacement ?
+          <i data-lucide="chevron-down" class="icon-xs"></i>
+        </button>
+        <div class="faq-s-a">
+          5 à 7 jours ouvrés avec un préavis suffisant. Pour les urgences, contactez-nous directement par téléphone.
+        </div>
+      </div>
+
+      <div class="faq-s-item">
+        <button class="faq-s-q">
+          Vous gérez aussi les clubs handisport ?
+          <i data-lucide="chevron-down" class="icon-xs"></i>
+        </button>
+        <div class="faq-s-a">
+          Oui, c'est l'un de nos axes prioritaires. Accessibilité vérifiée sur place, véhicules PMR, coordination accompagnateurs et matériel spécifique.
+        </div>
+      </div>
+
+      <div class="faq-s-item">
+        <button class="faq-s-q">
+          Peut-on changer d'offre en cours de saison ?
+          <i data-lucide="chevron-down" class="icon-xs"></i>
+        </button>
+        <div class="faq-s-a">
+          Oui, une montée en offre est possible à tout moment selon l'évolution de vos besoins.
+        </div>
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- FAQ CONVERSION -->
-<section class="faq-contact">
-  <h2 class="section-title">Avant de nous contacter</h2>
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Combien de temps faut-il pour organiser un premier déplacement ?
-        <span class="icon-nav"><i data-lucide="chevron-down"></i></span>
-      </button>
-      <div class="faq-answer">
-        <p>Comptez 5 à 7 jours ouvrés pour un premier déplacement avec l'offre Découverte. Pour les abonnements, nous construisons le calendrier de toute la saison dès la signature.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        LDS travaille-t-il avec tous les sports ?
-        <span class="icon-nav"><i data-lucide="chevron-down"></i></span>
-      </button>
-      <div class="faq-answer">
-        <p>Oui, LDS intervient sur tous les sports collectifs et individuels, valides et handisport. Nous nous adaptons aux contraintes spécifiques de chaque discipline.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Peut-on tester LDS sans s'engager sur une saison complète ?
-        <span class="icon-nav"><i data-lucide="chevron-down"></i></span>
-      </button>
-      <div class="faq-answer">
-        <p>Oui, c'est exactement l'objet de l'offre Découverte à 150€ : un seul déplacement, sans engagement, avec garantie satisfait ou remboursé.</p>
-      </div>
-    </div>
+<!-- CTA FINAL -->
+<div class="contact-cta-final">
+  <h2>Pas encore prêt pour un devis ?</h2>
+  <p>Commencez par tester l'offre Découverte sur un seul déplacement. Sans engagement, satisfait ou remboursé.</p>
+  <div class="cta-buttons">
+    <a href="clubs-pilotes.html" class="btn-primary">
+      <i data-lucide="users" class="icon-nav"></i>
+      Candidater au programme pilotes
+    </a>
+    <a href="offres.html" class="btn-secondary">Voir nos offres</a>
   </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -275,7 +373,11 @@
 
 <script>
   lucide.createIcons();
-  function toggleFaq(btn) { btn.nextElementSibling.classList.toggle('open'); }
+  document.querySelectorAll('.faq-s-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.nextElementSibling.classList.toggle('open');
+    });
+  });
 </script>
 </body>
 </html>

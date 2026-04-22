@@ -8,41 +8,107 @@
   <link rel="icon" href="../assets/images/siteicon.ico" type="image/x-icon">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
-    .page-hero { padding: 64px 48px 48px; border-bottom: 1px solid #CCCCCC; text-align: center; }
-    .page-hero .hero-label { font-size: 12px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; color: #666666; margin-bottom: 16px; }
-    .page-hero h1 { font-size: 38px; font-weight: bold; margin-bottom: 14px; }
-    .page-hero p  { font-size: 18px; color: #666666; max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
-    .counter-block { display: inline-flex; align-items: center; gap: 16px; border: 2px solid #1A1A1A; padding: 16px 32px; }
-    .counter-num { font-size: 40px; font-weight: bold; line-height: 1; }
-    .counter-label { font-size: 13px; color: #666666; text-align: left; line-height: 1.4; }
+    /* HERO */
+    .page-hero { padding: 72px 48px 64px; border-bottom: 1px solid #CCCCCC; text-align: center; }
+    .page-hero .hero-label {
+      font-size: 11px; font-weight: bold; letter-spacing: 1.2px;
+      text-transform: uppercase; color: #F26430; margin-bottom: 16px;
+    }
+    .page-hero h1 { font-size: 40px; font-weight: bold; margin-bottom: 16px; line-height: 1.15; }
+    .page-hero .hero-sub { font-size: 18px; color: #666666; max-width: 560px; margin: 0 auto 36px; line-height: 1.7; }
 
-    .offre-section { padding: 72px 48px; }
-    .offre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-    .offre-card { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 36px 28px; }
-    .offre-card h3 { font-size: 20px; font-weight: bold; margin-bottom: 8px; }
-    .offre-card .badge-pilot { display: inline-block; background: #1A1A1A; color: #FFFFFF; font-size: 11px; padding: 3px 10px; margin-bottom: 16px; font-weight: bold; }
-    .offre-card ul { list-style: none; margin-bottom: 0; }
-    .offre-card ul li { font-size: 14px; padding: 10px 0; border-bottom: 1px solid #F5F5F5; display: flex; align-items: flex-start; gap: 8px; }
-    .offre-card ul li .icon-check { color: #1A1A1A; margin-top: 2px; }
+    .counter-block {
+      display: inline-flex; align-items: center; gap: 20px;
+      border: 2px solid #F26430; padding: 18px 36px;
+    }
+    .counter-num { font-size: 48px; font-weight: bold; line-height: 1; color: #F26430; }
+    .counter-label { font-size: 13px; color: #666666; text-align: left; line-height: 1.5; }
+    .counter-label strong { display: block; color: #F26430; font-size: 15px; }
 
+    /* OFFRE — 4 BÉNÉFICES */
+    .benefits-section { padding: 72px 48px; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .benefit-card {
+      border: 1px solid #CCCCCC; padding: 32px 28px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+    }
+    .benefit-icon { color: #3574F2; margin-bottom: 16px; display: flex; }
+    .benefit-card h3 { font-size: 17px; font-weight: bold; margin-bottom: 8px; }
+    .benefit-card p  { font-size: 14px; color: #666666; line-height: 1.6; }
+
+    /* OFFRES DÉTAIL */
+    .offres-detail { padding: 0 48px 72px; }
+    .offre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .offre-card { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 32px 28px; }
+    .offre-card .badge-pilot {
+      display: inline-block; background: #F26430; color: #FFFFFF;
+      font-size: 11px; padding: 3px 10px; margin-bottom: 14px;
+      font-weight: bold; letter-spacing: 0.4px;
+    }
+    .offre-card h3 { font-size: 20px; font-weight: bold; margin-bottom: 6px; }
+    .offre-price-pilot { font-size: 26px; font-weight: bold; margin-bottom: 20px; }
+    .offre-price-pilot .original { font-size: 15px; color: #999999; text-decoration: line-through; font-weight: normal; margin-left: 8px; }
+    .offre-card ul { list-style: none; }
+    .offre-card ul li {
+      font-size: 14px; padding: 9px 0; border-bottom: 1px solid #F0F0F0;
+      display: flex; align-items: flex-start; gap: 8px; line-height: 1.5;
+    }
+    .offre-card ul li:last-child { border-bottom: none; }
+    .offre-card ul li .icon-check { color: #3574F2; margin-top: 2px; flex-shrink: 0; }
+
+    /* CONTREPARTIES */
     .contrepartie { padding: 72px 48px; }
-    .contrepartie-inner { max-width: 640px; margin: 0 auto; text-align: center; }
-    .contrepartie-inner h2 { font-size: 30px; font-weight: bold; margin-bottom: 16px; }
-    .contrepartie-inner p { font-size: 15px; color: #666666; margin-bottom: 32px; line-height: 1.7; }
-    .contra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
-    .contra-card { border: 1px solid #CCCCCC; padding: 24px 20px; }
+    .contrepartie-inner { max-width: 760px; margin: 0 auto; }
+    .contrepartie-inner h2 { font-size: 28px; font-weight: bold; margin-bottom: 10px; text-align: center; }
+    .contrepartie-inner .sub { font-size: 15px; color: #666666; margin-bottom: 36px; line-height: 1.7; text-align: center; }
+    .contra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .contra-card { border: 1px solid #CCCCCC; padding: 28px 24px; border-left: 4px solid #73A3EF; }
     .contra-card h4 { font-size: 15px; font-weight: bold; margin-bottom: 8px; }
     .contra-card p  { font-size: 13px; color: #666666; line-height: 1.6; }
 
-    /* Formulaire */
+    /* POURQUOI REJOINDRE */
+    .pourquoi { padding: 72px 48px; }
+    .pourquoi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .pourquoi-card { border: 1px solid #CCCCCC; padding: 28px 24px; text-align: center; }
+    .pourquoi-card .icon-section { display: flex; justify-content: center; color: #3574F2; margin-bottom: 16px; }
+    .pourquoi-card h3 { font-size: 16px; font-weight: bold; margin-bottom: 8px; line-height: 1.4; }
+    .pourquoi-card p  { font-size: 13px; color: #666666; line-height: 1.6; }
+
+    /* COMPTEUR FINAL */
+    .counter-final {
+      background: #F26430; color: #FFFFFF;
+      padding: 48px; text-align: center;
+    }
+    .counter-final .places-num { font-size: 56px; font-weight: bold; color: #FFFFFF; line-height: 1; }
+    .counter-final .places-label { font-size: 16px; color: rgba(255,255,255,0.75); margin-top: 8px; margin-bottom: 32px; }
+
+    /* FORMULAIRE */
     .candidature-section { padding: 72px 48px; }
-    .candi-form { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 40px; max-width: 640px; margin: 0 auto; }
-    .candi-form h3 { font-size: 22px; font-weight: bold; margin-bottom: 28px; }
+    .candi-form { background: #FFFFFF; border: 1px solid #CCCCCC; padding: 40px; max-width: 680px; margin: 0 auto; }
+    .candi-form-title { font-size: 22px; font-weight: bold; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid #F0F0F0; }
     .form-group { margin-bottom: 20px; }
     .form-group label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 6px; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #CCCCCC; background: #FFFFFF; font-family: inherit; font-size: 14px; }
-    .form-group input:focus, .form-group select:focus { outline: none; border-color: #1A1A1A; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 10px 12px; border: 1px solid #CCCCCC;
+      background: #FFFFFF; font-family: inherit; font-size: 14px;
+    }
+    .form-group input:focus,
+    .form-group select:focus { outline: none; border-color: #F26430; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .handisport-toggle {
+      display: flex; align-items: flex-start; gap: 12px;
+      border: 1px solid #CCCCCC; padding: 14px 16px; cursor: pointer; width: 100%;
+    }
+    .handisport-toggle input[type="checkbox"] { width: 16px; height: 16px; accent-color: #F26430; flex-shrink: 0; margin-top: 2px; }
+    .handisport-toggle .toggle-label { font-size: 14px; font-weight: bold; display: block; margin-bottom: 2px; }
+    .handisport-toggle .toggle-sub  { font-size: 12px; color: #666666; }
+
+    .candi-form .btn-primary { width: 100%; justify-content: center; padding: 14px 28px; font-size: 15px; margin-top: 8px; }
+
+    .form-note { font-size: 12px; color: #999999; text-align: center; margin-top: 16px; line-height: 1.5; }
 
     @media print { nav { position: static; } .nav-actions { display: none; } }
   </style>
@@ -51,7 +117,11 @@
 
 <!-- NAVIGATION -->
 <nav>
-  <div class="nav-logo"><a href="../index.html" style="text-decoration:none;color:inherit;"><img src="../assets/logo/roundstar.png" alt="LDS"></a></div>
+  <div class="nav-logo">
+    <a href="../index.html" style="text-decoration:none;color:inherit;">
+      <img src="../assets/logo/roundstar.png" alt="LDS">
+    </a>
+  </div>
   <ul class="nav-links">
     <li><a href="../index.html">Accueil</a></li>
     <li><a href="offres.html">Notre service</a></li>
@@ -70,36 +140,72 @@
 <!-- HERO -->
 <div class="page-hero">
   <div class="hero-label">Programme limité · Lancement 2025</div>
-  <h1>Faites partie des 10 clubs fondateurs</h1>
-  <p>Accès prioritaire, tarif préférentiel, suivi renforcé. En échange d'un témoignage et de votre participation à l'amélioration du service.</p>
+  <h1>Faites partie des 10 clubs fondateurs de LDS</h1>
+  <p class="hero-sub">Places limitées. Tarif préférentiel. Témoignage demandé. Soyez la référence que les autres clubs consulteront.</p>
   <div class="counter-block">
     <div class="counter-num">7</div>
-    <div class="counter-label">places<br>disponibles<br>[placeholder]</div>
+    <div class="counter-label">
+      <strong>places disponibles</strong>
+      sur 10 au total
+    </div>
   </div>
 </div>
 
 <!-- CE QUE LE PROGRAMME OFFRE -->
-<section class="offre-section">
+<section class="benefits-section">
   <h2 class="section-title">Ce que le programme offre</h2>
+  <div class="benefits-grid">
+
+    <div class="benefit-card">
+      <div class="benefit-icon"><i data-lucide="tag" class="icon-section"></i></div>
+      <h3>–20% sur le premier abonnement</h3>
+      <p>Standard à 960€ au lieu de 1 200€ — Premium à 1 760€ au lieu de 2 200€. Réduction réservée aux 10 premiers clubs.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon"><i data-lucide="star" class="icon-section"></i></div>
+      <h3>Accès prioritaire aux partenaires préqualifiés</h3>
+      <p>Hôtels, restaurants, transporteurs sélectionnés par LDS. Vous avez la priorité sur les disponibilités en tant que club fondateur.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon"><i data-lucide="shield-check" class="icon-section"></i></div>
+      <h3>Suivi personnalisé renforcé sur toute la saison</h3>
+      <p>Accès direct à France Bausset. Échanges réguliers pour adapter le service à vos besoins terrain au fil de la saison.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon"><i data-lucide="award" class="icon-section"></i></div>
+      <h3>Votre club mentionné comme référence fondatrice</h3>
+      <p>Votre club est cité sur le site LDS et dans les communications de lancement. Vous êtes la preuve que le service fonctionne.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- DÉTAIL OFFRES -->
+<section class="offres-detail">
   <div class="offre-grid">
     <div class="offre-card">
       <div class="badge-pilot">Standard Pilote</div>
       <h3>Abonnement Standard</h3>
+      <div class="offre-price-pilot">960€ / an <span class="original">1 200€</span></div>
       <ul>
-        <li><i data-lucide="check" class="icon-check"></i>20% de réduction sur le tarif Standard (960€ au lieu de 1 200€)</li>
         <li><i data-lucide="check" class="icon-check"></i>6 à 10 déplacements sur la saison</li>
-        <li><i data-lucide="check" class="icon-check"></i>Accès prioritaire aux partenaires du réseau</li>
-        <li><i data-lucide="check" class="icon-check"></i>Suivi personnalisé renforcé avec France Bausset</li>
+        <li><i data-lucide="check" class="icon-check"></i>Réseau partenaires préqualifiés LDS</li>
+        <li><i data-lucide="check" class="icon-check"></i>Interlocuteur attitré</li>
         <li><i data-lucide="check" class="icon-check"></i>Accès espace client en avant-première</li>
+        <li><i data-lucide="check" class="icon-check"></i>Suivi personnalisé renforcé avec France Bausset</li>
       </ul>
     </div>
     <div class="offre-card">
       <div class="badge-pilot">Premium Pilote</div>
       <h3>Abonnement Premium</h3>
+      <div class="offre-price-pilot">1 760€ / an <span class="original">2 200€</span></div>
       <ul>
-        <li><i data-lucide="check" class="icon-check"></i>20% de réduction sur le tarif Premium (1 760€ au lieu de 2 200€)</li>
         <li><i data-lucide="check" class="icon-check"></i>10+ déplacements ou contraintes complexes</li>
-        <li><i data-lucide="check" class="icon-check"></i>Accessibilité handisport vérifiée</li>
+        <li><i data-lucide="check" class="icon-check"></i>Accessibilité handisport vérifiée sur place</li>
+        <li><i data-lucide="check" class="icon-check"></i>Substitution prestataire 30 min garantie</li>
         <li><i data-lucide="check" class="icon-check"></i>Interlocuteur dédié France Bausset</li>
         <li><i data-lucide="check" class="icon-check"></i>Accès espace client en avant-première</li>
       </ul>
@@ -107,33 +213,67 @@
   </div>
 </section>
 
-<!-- CONTREPARTIES -->
+<!-- CE QU'ON ATTEND EN RETOUR -->
 <section class="contrepartie">
   <div class="contrepartie-inner">
     <h2>Ce qu'on attend en retour</h2>
-    <p>Le programme clubs pilotes est un partenariat. Votre retour d'expérience nous aide à construire un meilleur service pour tous les clubs.</p>
+    <p class="sub">Le programme clubs pilotes est un partenariat. Votre retour d'expérience nous aide à construire un service meilleur pour tous les clubs qui viendront après vous.</p>
     <div class="contra-grid">
       <div class="contra-card">
         <h4>Un témoignage après la première saison</h4>
-        <p>Une citation ou un retour vidéo court (2 min max) sur votre expérience avec LDS, utilisé sur notre site et nos réseaux.</p>
+        <p>Une citation ou un court retour vidéo (2 min max) sur votre expérience avec LDS. Utilisé sur notre site, nos réseaux et nos communications commerciales.</p>
       </div>
       <div class="contra-card">
-        <h4>Participation à l'amélioration du service</h4>
-        <p>2 à 3 échanges de feedback dans la saison (30 min chacun) pour partager vos retours et contribuer à l'évolution du service.</p>
+        <h4>Participation optionnelle à l'amélioration du service</h4>
+        <p>2 à 3 échanges de feedback dans la saison (30 min chacun) pour partager vos retours concrets et contribuer à l'évolution du service.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- POURQUOI REJOINDRE MAINTENANT -->
+<section class="pourquoi">
+  <h2 class="section-title">Pourquoi rejoindre maintenant ?</h2>
+  <div class="pourquoi-grid">
+    <div class="pourquoi-card">
+      <div class="icon-section"><i data-lucide="clock" class="icon-section"></i></div>
+      <h3>Tarif préférentiel réservé aux 10 premiers</h3>
+      <p>Le –20% est exclusivement réservé aux clubs fondateurs. Une fois les 10 places prises, l'offre pilote disparaît.</p>
+    </div>
+    <div class="pourquoi-card">
+      <div class="icon-section"><i data-lucide="git-branch" class="icon-section"></i></div>
+      <h3>Influence directe sur le développement</h3>
+      <p>Vous participez à la construction du service. Vos retours terrain façonnent les fonctionnalités que tous les clubs utiliseront demain.</p>
+    </div>
+    <div class="pourquoi-card">
+      <div class="icon-section"><i data-lucide="trending-up" class="icon-section"></i></div>
+      <h3>Être la référence que les autres consultent</h3>
+      <p>Les premiers clubs à avoir testé LDS deviennent la preuve sociale sur laquelle tous les futurs prospects s'appuient pour décider.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPTEUR FINAL -->
+<div class="counter-final">
+  <div class="places-num">7</div>
+  <div class="places-label">places restantes sur 10</div>
+  <a href="#candidature" class="btn-outline-light">
+    <i data-lucide="arrow-down" class="icon-nav"></i>
+    Candidater au programme pilote
+  </a>
+</div>
+
 <!-- FORMULAIRE -->
-<section class="candidature-section">
-  <h2 class="section-title">Candidater au programme pilote</h2>
+<section class="candidature-section" id="candidature">
+  <h2 class="section-title">Votre candidature</h2>
   <div class="candi-form">
-    <h3>Votre candidature</h3>
+    <div class="candi-form-title">Candidater au programme clubs pilotes — places limitées</div>
+
     <div class="form-group">
       <label>Nom du club *</label>
       <input type="text" placeholder="ex : SC Riviera Rugby">
     </div>
+
     <div class="form-row">
       <div class="form-group">
         <label>Discipline sportive *</label>
@@ -144,49 +284,70 @@
           <option>Basketball</option>
           <option>Volleyball</option>
           <option>Handball</option>
+          <option>Natation</option>
           <option>Handisport</option>
           <option>Autre</option>
         </select>
       </div>
       <div class="form-group">
-        <label>Nombre de déplacements / an *</label>
+        <label>Déplacements estimés / an *</label>
         <select>
           <option value="">Sélectionner...</option>
-          <option>6 à 10 (Standard)</option>
-          <option>10 à 15 (Premium)</option>
+          <option>6 à 10 (→ Standard Pilote)</option>
+          <option>10 à 15 (→ Premium Pilote)</option>
           <option>15+</option>
         </select>
       </div>
     </div>
+
     <div class="form-group">
       <label>Offre souhaitée *</label>
       <select>
         <option value="">Sélectionner...</option>
-        <option>Standard Pilote (960€ / an)</option>
-        <option>Premium Pilote (1 760€ / an)</option>
+        <option>Standard Pilote — 960€ / an (–20%)</option>
+        <option>Premium Pilote — 1 760€ / an (–20%)</option>
       </select>
     </div>
+
+    <div class="form-group">
+      <label>Contraintes spécifiques</label>
+      <label class="handisport-toggle">
+        <input type="checkbox">
+        <div>
+          <span class="toggle-label">Mon club pratique le handisport</span>
+          <span class="toggle-sub">Accessibilité, véhicules adaptés, accompagnateurs — on prend tout en compte</span>
+        </div>
+      </label>
+    </div>
+
     <div class="form-row">
       <div class="form-group">
         <label>Prénom et nom *</label>
-        <input type="text">
+        <input type="text" placeholder="">
       </div>
       <div class="form-group">
-        <label>Rôle dans le club</label>
-        <input type="text" placeholder="Président, Coach...">
+        <label>Rôle dans le club *</label>
+        <input type="text" placeholder="Président, Coach, Manager...">
       </div>
     </div>
+
     <div class="form-row">
       <div class="form-group">
         <label>Email *</label>
-        <input type="email">
+        <input type="email" placeholder="contact@monclub.fr">
       </div>
       <div class="form-group">
         <label>Téléphone</label>
-        <input type="tel">
+        <input type="tel" placeholder="06 XX XX XX XX">
       </div>
     </div>
-    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:12px 20px;">Candidater au programme pilote</button>
+
+    <button type="submit" class="btn-primary">
+      <i data-lucide="send" class="icon-nav"></i>
+      Candidater au programme pilote — places limitées
+    </button>
+
+    <p class="form-note">En soumettant ce formulaire, vous serez recontacté sous 24h par France Bausset pour valider votre candidature. Aucun paiement demandé à ce stade.</p>
   </div>
 </section>
 
