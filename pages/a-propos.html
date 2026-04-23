@@ -15,7 +15,8 @@
     /* Histoire */
     .histoire { padding: 72px 48px; }
     .histoire-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .histoire-photo { height: 400px; background: #CCCCCC; border: 1px solid #666666; display: flex; align-items: center; justify-content: center; color: #666666; font-size: 14px; }
+    .histoire-photo { height: 400px; overflow: hidden; }
+    .histoire-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
     .histoire-text h2 { font-size: 28px; font-weight: bold; margin-bottom: 16px; line-height: 1.3; }
     .histoire-text p  { font-size: 15px; color: #666666; line-height: 1.8; margin-bottom: 16px; }
     .histoire-text p:last-child { margin-bottom: 0; }
@@ -85,7 +86,9 @@
 <!-- HISTOIRE -->
 <section class="histoire">
   <div class="histoire-grid">
-    <div class="histoire-photo">[Photo France Bausset]</div>
+    <div class="histoire-photo">
+      <img src="../assets/images/france bausset.jpg" alt="France Bausset">
+    </div>
     <div class="histoire-text">
       <h2>France Bausset, 25 ans sur les routes des matchs à l'extérieur</h2>
       <p>Ancienne volleyeuse de haut niveau ayant évolué jusqu'à Monaco, France Bausset a passé vingt-cinq ans à se déplacer aux quatre coins de la France avec ses équipes.</p>
